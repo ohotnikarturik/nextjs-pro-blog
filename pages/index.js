@@ -9,7 +9,7 @@ export default function Home() {
         <meta name="keywords" content="blog web application" />
       </Head>
 
-      <span className="text-primary-black font-extrabold text-5xl">
+      <span className="text-primary-gray font-extrabold text-5xl">
         Welcome to Pro<span className="text-primary-red">Blog</span> web app
       </span>
     </div>

@@ -16,6 +16,7 @@ module.exports = {
       },
       fontFamily: {
         nunito: ['Nunito'],
+        leckerli: ['Leckerli One'],
       },
     },
   },
