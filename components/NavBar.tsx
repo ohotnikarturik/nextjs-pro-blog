@@ -7,21 +7,32 @@ const navBarItems = [
   { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
 ]
+export interface NavBarProps {
+  footerStyle?: boolean
+}
 
-const NavBar = () => {
+const NavBar = ({ footerStyle }: NavBarProps) => {
   const router = useRouter()
 
   return (
     <nav>
       <ul className="flex">
         {navBarItems.map((item) => (
-          <li className="ml-7" key={item.path}>
+          <li className="ml-9" key={item.path}>
             <Link href={item.path}>
               <a
                 className={`${
                   router.pathname === item.path &&
-                  'border-primary-crimson text-primary-crimson'
-                } border-b border-transparent text-primary-gray text-lg hover:text-primary-crimson hover:border-primary-crimson hover:border-b transition ease-in duration-200`}
+                  `border-primary-${
+                    footerStyle ? 'none' : 'crimson'
+                  } text-primary-${footerStyle ? 'pink' : 'crimson'}`
+                } border-b-2 border-transparent text-primary-${
+                  footerStyle ? 'white' : 'gray'
+                } font-semibold text-lg hover:text-primary-${
+                  footerStyle ? 'pink' : 'crimson'
+                } hover:border-primary-${
+                  footerStyle ? 'none' : 'crimson'
+                } hover:border-b-2 transition ease-in duration-200`}
               >
                 {item.label}
               </a>

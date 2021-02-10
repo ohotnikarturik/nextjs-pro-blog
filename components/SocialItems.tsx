@@ -18,12 +18,20 @@ const socialIcons = [
   { id: 4, size: 25, name: faLinkedin, href: 'https://www.linkedin.com/' },
 ]
 
-const SocialItems = () => {
+export interface SocialItemsProps {
+  footerStyle?: boolean
+}
+
+const SocialItems = ({ footerStyle }: SocialItemsProps) => {
   return (
     <ul className="flex">
       {socialIcons.map((item) => (
         <li
-          className="mr-4 text-primary-red hover:text-primary-crimson transition ease-in duration-200 cursor-pointer"
+          className={`text-primary-${
+            footerStyle ? 'white' : 'red'
+          } hover:text-primary-${
+            footerStyle ? 'red' : 'crimson'
+          } mr-4 transition ease-in duration-200 cursor-pointer`}
           key={item.id}
         >
           <a href={item.href} rel="noreferrer" target="_blank">

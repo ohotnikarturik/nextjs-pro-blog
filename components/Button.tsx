@@ -8,7 +8,7 @@ const Button = ({ label, path, icon, onClick, isMenuOpen }: ButtonProps) => {
     <Link href={path}>
       <button
         onClick={onClick}
-        className="inline-flex focus:outline-none focus:bg-primary-crimson items-center py-2 px-4 bg-primary-red hover:bg-primary-crimson transition ease-in duration-200 text-primary-white rounded-md font-medium"
+        className="flex justify-center focus:outline-none focus:bg-primary-crimson items-center w-36 py-2 px-4 bg-primary-red hover:bg-primary-crimson transition ease-in duration-200 text-primary-white rounded-md font-medium"
       >
         {label}
         {icon && (
