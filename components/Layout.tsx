@@ -1,13 +1,15 @@
+import React from 'react'
+
 import Header from './Header'
 
-const Layout = ({ children }) => {
+const Layout: React.FunctionComponent = ({ children }) => {
   return (
-    <>
-      <Header />
+    <div>
       <div>
+        <Header />
         <main>{children}</main>
       </div>
-    </>
+    </div>
   )
 }
 

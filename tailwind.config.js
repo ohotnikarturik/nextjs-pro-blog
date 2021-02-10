@@ -12,11 +12,16 @@ module.exports = {
           pink: '#FFB7B7',
           purple: '#DC78FF',
           crimson: '#DC143C',
+          silver: '#F0F0F0',
         },
       },
       fontFamily: {
         nunito: ['Nunito'],
         leckerli: ['Leckerli One'],
+      },
+      container: {
+        center: true,
+        padding: '1rem',
       },
     },
   },
