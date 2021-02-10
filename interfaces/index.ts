@@ -1,6 +1,9 @@
 export interface ButtonProps {
   label: string
-  href: string
+  path: string  // fix
+  icon?: any // fix
+  onClick?: () => void
+  isMenuOpen?: boolean
 }
 
 export interface TitleProps {
