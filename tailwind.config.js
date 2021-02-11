@@ -13,6 +13,9 @@ module.exports = {
           purple: '#DC78FF',
           crimson: '#DC143C',
           silver: '#F0F0F0',
+          green: '#14B58E',
+          blue: '#6C84FF',
+          orange: '#FF9254',
         },
       },
       fontFamily: {

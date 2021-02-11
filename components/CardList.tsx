@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Badge from './Badge'
 import Button from './Button'
 import Subtitle from './Subtitle'
 
@@ -12,6 +13,8 @@ const cardList = [
     authorImg: '/profile.png',
     authorName: 'Artur Okhotnichenko',
     date: '12 January 2021',
+    badgeColor: 'purple',
+    category: 'Lifestyle',
   },
   {
     id: 2,
@@ -22,6 +25,8 @@ const cardList = [
     authorImg: '/profile.png',
     authorName: 'Artur Okhotnichenko',
     date: '12 January 2021',
+    badgeColor: 'green',
+    category: 'Technology',
   },
   {
     id: 3,
@@ -32,6 +37,8 @@ const cardList = [
     authorImg: '/profile.png',
     authorName: 'Artur Okhotnichenko',
     date: '12 January 2021',
+    badgeColor: 'blue',
+    category: 'Interviews',
   },
   {
     id: 4,
@@ -42,6 +49,8 @@ const cardList = [
     authorImg: '/profile.png',
     authorName: 'Artur Okhotnichenko',
     date: '12 January 2021',
+    badgeColor: 'gray',
+    category: 'Food',
   },
 ]
 
@@ -54,7 +63,7 @@ const CardList = () => {
           key={item.id}
         >
           <div className=" bg-primary-white overflow-hidden rounded-md">
-            <div className="h-1/2">
+            <div className="h-1/2 relative">
               <Image
                 src={item.postImg}
                 layout="responsive"
@@ -63,11 +72,14 @@ const CardList = () => {
                 quality={100}
                 alt="Post image"
               />
+              <div className="absolute left-0 bottom-0">
+                <Badge colour={item.badgeColor} label={item.category} />
+              </div>
             </div>
             <div className="h-1/2 px-4 pt-4 pb-7">
               <div className="h-full">
                 <Subtitle cardStyle label={item.title} />
-                <div className="h-16 max-h-16 overflow-scroll">
+                <div className="h-16 mt-3 max-h-16 overflow-scroll">
                   <span>{item.textContent}</span>
                 </div>
               </div>
@@ -86,7 +98,7 @@ const CardList = () => {
                   </span>
                 </div>
                 <div>
-                  <span className="text-xs">{item.date}</span>
+                  <span className="text-xs font-medium">{item.date}</span>
                 </div>
               </div>
             </div>

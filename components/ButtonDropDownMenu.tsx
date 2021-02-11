@@ -10,7 +10,7 @@ const ButtonDropDownMenu = ({
   return (
     <button
       onClick={onClick}
-      className="flex justify-between focus:outline-none focus:bg-primary-crimson items-center w-40 py-2 px-4 bg-primary-red hover:bg-primary-crimson transition ease-in duration-200 text-primary-white rounded-md font-medium"
+      className="flex justify-between shadow-md focus:outline-none focus:bg-primary-crimson items-center w-40 py-2 px-4 bg-primary-red hover:bg-primary-crimson transition ease-in duration-200 text-primary-white rounded-md font-medium"
     >
       {label}
       <div className={`ml-2 ${isMenuOpen ? 'transform rotate-180' : null}`}>

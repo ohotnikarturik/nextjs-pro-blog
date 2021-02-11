@@ -15,3 +15,7 @@ export interface SubtitleProps {
   label: string
   cardStyle?: boolean
 }
+export interface BadgeProps {
+  label: string
+  colour: string
+}

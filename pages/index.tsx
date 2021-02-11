@@ -6,6 +6,8 @@ import Subtitle from '../components/Subtitle'
 import SocialItems from '../components/SocialItems'
 import SearchFilterSortPanel from '../components/SearchFilterSortPanel'
 import CardList from '../components/CardList'
+import Pagination from '../components/Pagination'
+import Title from '../components/Title'
 
 export default function Home() {
   return (
@@ -39,7 +41,7 @@ export default function Home() {
                 height={600}
               />
             </div>
-            <div className="invisible md:visible absolute z-0 top-1/3 right-0">
+            <div className="invisible md:visible absolute z-0 top-20 right-0">
               <Image src="/shape-1.svg" alt="Shape" width={600} height={600} />
             </div>
           </div>
@@ -50,12 +52,18 @@ export default function Home() {
       </section>
       <section className="min-h-screen relative">
         <div className="bg-primary-pink sticky top-0 z-50">
-          <div className="container">
+          <div className="container relative">
             <SearchFilterSortPanel />
           </div>
         </div>
         <div className="container my-24">
+          <div className="mb-8">
+            <Title label="Latest Posts." />
+          </div>
           <CardList />
+        </div>
+        <div className="container mb-10 flex justify-center">
+          <Pagination />
         </div>
       </section>
     </div>

@@ -27,7 +27,7 @@ const NavBar = ({ footerStyle }: NavBarProps) => {
                     footerStyle ? 'none' : 'crimson'
                   } text-primary-${footerStyle ? 'pink' : 'crimson'}`
                 } border-b-2 border-transparent text-primary-${
-                  footerStyle ? 'white' : 'black'
+                  footerStyle ? 'white' : 'red'
                 } font-${footerStyle ? 'light' : 'medium'} text-${
                   footerStyle ? 'base' : 'lg'
                 } hover:text-primary-${
