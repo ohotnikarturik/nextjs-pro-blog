@@ -11,17 +11,19 @@ export interface DropDownMenuProps {
 
 const DropDownMenu = ({ onClick }: DropDownMenuProps) => {
   return (
-    <ul className="absolute left-4 top-16 mt-2 w-56 rounded-lg shadow-lg bg-white">
-      {dropDownMenuItems.map((item) => (
-        <li
-          onClick={() => onClick(item.category)}
-          key={item.id}
-          className="cursor-pointer px-4 py-2 text-sm text-primary-white bg-primary-red hover:bg-primary-crimson transition ease-in duration-200"
-        >
-          {item.category}
-        </li>
-      ))}
-    </ul>
+    <div className="left-4 top-16 mt-3 absolute rounded-lg shadow-lg overflow-hidden">
+      <ul className="w-56">
+        {dropDownMenuItems.map((item) => (
+          <li
+            onClick={() => onClick(item.category)}
+            key={item.id}
+            className="cursor-pointer px-4 py-3 text-sm text-primary-white bg-primary-red hover:bg-primary-crimson transition ease-in duration-200"
+          >
+            {item.category}
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 

@@ -5,8 +5,8 @@ import SocialItems from './SocialItems'
 const Footer = () => {
   return (
     <footer className="bg-primary-black ">
-      <div className="container h-80">
-        <div className="h-3/4 border-b border-gray-700 flex items-end pb-10">
+      <div className="container h-48">
+        <div className="h-3/4 border-b border-gray-700 flex items-center">
           <div className="w-1/3 flex items-center justify-start">
             <SocialItems footerStyle />
           </div>

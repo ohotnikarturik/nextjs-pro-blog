@@ -4,22 +4,21 @@ import Image from 'next/image'
 import Button from '../components/Button'
 import Subtitle from '../components/Subtitle'
 import SocialItems from '../components/SocialItems'
-import SearchFilterSortPanel from '../components/SearchFilterSortPanel'
 import CardList from '../components/CardList'
-import Pagination from '../components/Pagination'
 import Title from '../components/Title'
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
-        <title>ProBlog App</title>
+        <title>ProBlog App | Home</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="keywords" content="blog web application" />
       </Head>
+
       <section className="h-screen">
-        <div className="container h-full flex flex-col justify-around">
-          <div className="flex w-full relative ">
+        <div className="container h-full flex flex-col justify-evenly ">
+          <div className="flex w-full relative">
             <div className="flex flex-col items-start w-3/4 z-50">
               <h1 className="text-primary-black font-bold text-5xl mb-3">
                 Welcome to <span className="text-primary-black">Pro</span>
@@ -32,17 +31,13 @@ export default function Home() {
                 <Button label="Latest Posts" path="/" />
               </div>
             </div>
-            <div className="w-1/4 relative ">
+            <div className="absolute z-10 top-0 right-0 invisible lg:visible">
               <Image
-                className="absolute z-10"
-                src="/home-image.svg"
+                src="/home-img.svg"
                 alt="Read blog image"
                 width={600}
                 height={600}
               />
-            </div>
-            <div className="invisible md:visible absolute z-0 top-20 right-0">
-              <Image src="/shape-1.svg" alt="Shape" width={600} height={600} />
             </div>
           </div>
           <div className="z-50">
@@ -51,21 +46,13 @@ export default function Home() {
         </div>
       </section>
       <section className="min-h-screen relative">
-        <div className="bg-primary-pink sticky top-0 z-50">
-          <div className="container relative">
-            <SearchFilterSortPanel />
-          </div>
-        </div>
-        <div className="container my-24">
-          <div className="mb-8">
+        <div className="container mt-10 mb-28 ">
+          <div className="mb-7">
             <Title label="Latest Posts." />
           </div>
           <CardList />
         </div>
-        <div className="container mb-10 flex justify-center">
-          <Pagination />
-        </div>
       </section>
-    </div>
+    </>
   )
 }

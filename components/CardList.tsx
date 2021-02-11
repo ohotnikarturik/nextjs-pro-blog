@@ -79,7 +79,7 @@ const CardList = () => {
             <div className="h-1/2 px-4 pt-4 pb-7">
               <div className="h-full">
                 <Subtitle cardStyle label={item.title} />
-                <div className="h-16 mt-3 max-h-16 overflow-scroll">
+                <div className="h-20 mt-3 max-h-20 overflow-scroll">
                   <span>{item.textContent}</span>
                 </div>
               </div>

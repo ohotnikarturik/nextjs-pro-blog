@@ -7,7 +7,7 @@ const Header = () => {
   const router = useRouter()
 
   return (
-    <header className="h-16">
+    <header className="h-20 shadow-sm">
       <div className="container flex justify-between items-center h-full">
         <Logo />
         <NavBar />

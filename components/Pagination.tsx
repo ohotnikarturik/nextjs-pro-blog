@@ -11,7 +11,7 @@ const Pagination = () => {
   return (
     <div className="flex">
       <Link href="#">
-        <a className="hover:bg-primary-crimson shadow-md transition ease-in duration-200 cursor-pointer transform rotate-90 flex items-center justify-center w-9 h-9 bg-primary-black font-semibold text-primary-white rounded-full mx-3">
+        <a className="hover:bg-primary-crimson shadow-md transition ease-in duration-200 cursor-pointer transform rotate-90 flex items-center justify-center w-9 h-9 bg-primary-black opacity-90 font-semibold text-primary-white rounded-full mx-3">
           <FontAwesomeIcon width={15} icon={'chevron-down'} />
         </a>
       </Link>
@@ -19,7 +19,7 @@ const Pagination = () => {
         {paginationList.map((item) => (
           <li
             key={item.id}
-            className="hover:bg-primary-crimson shadow-md transition ease-in duration-200 cursor-pointer flex items-center justify-center w-9 h-9 bg-primary-black font-semibold text-primary-white rounded-full mx-3"
+            className="hover:bg-primary-crimson shadow-md transition ease-in duration-200 cursor-pointer flex items-center justify-center w-9 h-9 bg-primary-black font-semibold opacity-90 text-primary-white rounded-full mx-3"
           >
             <Link href={item.path}>
               <a>{item.id}</a>
@@ -28,7 +28,7 @@ const Pagination = () => {
         ))}
       </ul>
       <Link href="#">
-        <a className="hover:bg-primary-crimson shadow-md transition ease-in duration-200 cursor-pointer transform -rotate-90 flex items-center justify-center w-9 h-9 bg-primary-black font-semibold text-primary-white rounded-full mx-3">
+        <a className="hover:bg-primary-crimson shadow-md transition ease-in duration-200 cursor-pointer transform -rotate-90 flex items-center justify-center w-9 h-9 bg-primary-black opacity-90 font-semibold text-primary-white rounded-full mx-3">
           <FontAwesomeIcon width={15} icon={'chevron-down'} />
         </a>
       </Link>
