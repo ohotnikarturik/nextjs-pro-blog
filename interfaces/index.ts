@@ -13,7 +13,7 @@ export interface TitleProps {
 }
 export interface SubtitleProps {
   label: string
-  cardStyle?: boolean
+  boldStyle?: boolean
 }
 export interface BadgeProps {
   label: string

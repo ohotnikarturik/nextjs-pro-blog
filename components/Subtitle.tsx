@@ -1,10 +1,10 @@
 import { SubtitleProps } from '../interfaces/index'
 
-const Subtitle = ({ label, cardStyle }: SubtitleProps) => {
+const Subtitle = ({ label, boldStyle }: SubtitleProps) => {
   return (
     <h3
       className={`text-xl font-${
-        cardStyle ? 'bold' : 'light'
+        boldStyle ? 'bold' : 'light'
       } text-primary-gray`}
     >
       {label}
