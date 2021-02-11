@@ -18,7 +18,7 @@ const NavBar = ({ footerStyle }: NavBarProps) => {
     <nav>
       <ul className="flex">
         {navBarItems.map((item) => (
-          <li className="ml-9" key={item.path}>
+          <li className={`${footerStyle ? 'mx-3 ' : 'ml-9'}`} key={item.path}>
             <Link href={item.path}>
               <a
                 className={`${
@@ -27,8 +27,10 @@ const NavBar = ({ footerStyle }: NavBarProps) => {
                     footerStyle ? 'none' : 'crimson'
                   } text-primary-${footerStyle ? 'pink' : 'crimson'}`
                 } border-b-2 border-transparent text-primary-${
-                  footerStyle ? 'white' : 'gray'
-                } font-semibold text-lg hover:text-primary-${
+                  footerStyle ? 'white' : 'black'
+                } font-${footerStyle ? 'light' : 'medium'} text-${
+                  footerStyle ? 'base' : 'lg'
+                } hover:text-primary-${
                   footerStyle ? 'pink' : 'crimson'
                 } hover:border-primary-${
                   footerStyle ? 'none' : 'crimson'

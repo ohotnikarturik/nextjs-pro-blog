@@ -6,10 +6,16 @@ const Footer = () => {
   return (
     <footer className="bg-primary-black ">
       <div className="container h-80">
-        <div className="h-3/4 border-b border-gray-700 flex justify-between items-end pb-10">
-          <SocialItems footerStyle />
-          <NavBar footerStyle />
-          <Logo footerStyle />
+        <div className="h-3/4 border-b border-gray-700 flex items-end pb-10">
+          <div className="w-1/3 flex items-center justify-start">
+            <SocialItems footerStyle />
+          </div>
+          <div className="w-1/3 flex items-center justify-center">
+            <NavBar footerStyle />
+          </div>
+          <div className="w-1/3 flex items-center justify-end">
+            <Logo footerStyle />
+          </div>
         </div>
         <div className="h-1/4 text-primary-white flex justify-center items-center">
           <p>Copyright © 2021 Artur Okhotnichenko</p>

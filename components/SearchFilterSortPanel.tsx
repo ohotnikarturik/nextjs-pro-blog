@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import Button from './Button'
+import ButtonDropDownMenu from './ButtonDropDownMenu'
 import DropDownMenu from './DropDownMenu'
 import SearchInput from './SearchInput'
 import SortItem from './SortItem'
@@ -16,19 +16,21 @@ const SearchFilterSortPanel = () => {
   }
 
   return (
-    <div className="bg-primary-pink">
-      <div className="container flex justify-between items-center h-24 relative">
-        <Button
+    <div className="flex h-24">
+      <div className="w-1/3 flex items-center justify-start">
+        <ButtonDropDownMenu
           onClick={onClickMenuOpen}
-          path="#"
-          icon="chevron-down"
           label={category}
           isMenuOpen={isMenuOpen}
         />
-        {isMenuOpen && <DropDownMenu onClick={onClickChooseCategory} />}
+      </div>
+      <div className="w-1/3 flex items-center justify-center">
         <SearchInput />
+      </div>
+      <div className="w-1/3 flex items-center justify-end">
         <SortItem />
       </div>
+      {isMenuOpen && <DropDownMenu onClick={onClickChooseCategory} />}
     </div>
   )
 }

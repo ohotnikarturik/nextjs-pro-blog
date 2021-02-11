@@ -5,6 +5,7 @@ import Button from '../components/Button'
 import Subtitle from '../components/Subtitle'
 import SocialItems from '../components/SocialItems'
 import SearchFilterSortPanel from '../components/SearchFilterSortPanel'
+import CardList from '../components/CardList'
 
 export default function Home() {
   return (
@@ -14,10 +15,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="keywords" content="blog web application" />
       </Head>
-      <section className="h-screen bg-primary-silver">
+      <section className="h-screen">
         <div className="container h-full flex flex-col justify-around">
-          <div className="flex w-full">
-            <div className="flex flex-col items-start w-3/4">
+          <div className="flex w-full relative ">
+            <div className="flex flex-col items-start w-3/4 z-50">
               <h1 className="text-primary-black font-bold text-5xl mb-3">
                 Welcome to <span className="text-primary-black">Pro</span>
                 <span className="text-primary-red">Blog</span> web app
@@ -29,23 +30,32 @@ export default function Home() {
                 <Button label="Latest Posts" path="/" />
               </div>
             </div>
-            <div className="w-1/4">
+            <div className="w-1/4 relative ">
               <Image
+                className="absolute z-10"
                 src="/home-image.svg"
                 alt="Read blog image"
                 width={600}
                 height={600}
               />
             </div>
+            <div className="invisible md:visible absolute z-0 top-1/3 right-0">
+              <Image src="/shape-1.svg" alt="Shape" width={600} height={600} />
+            </div>
           </div>
-          <div>
+          <div className="z-50">
             <SocialItems />
           </div>
         </div>
       </section>
-      <section>
-        <div className="h-full">
-          <SearchFilterSortPanel />
+      <section className="min-h-screen relative">
+        <div className="bg-primary-pink sticky top-0 z-50">
+          <div className="container">
+            <SearchFilterSortPanel />
+          </div>
+        </div>
+        <div className="container my-24">
+          <CardList />
         </div>
       </section>
     </div>

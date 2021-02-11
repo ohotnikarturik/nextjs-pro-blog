@@ -7,9 +7,7 @@ const Header = () => {
   const router = useRouter()
 
   return (
-    <header
-      className={`${router.pathname === '/' && 'bg-primary-silver'}  h-16`}
-    >
+    <header className="h-16">
       <div className="container flex justify-between items-center h-full">
         <Logo />
         <NavBar />

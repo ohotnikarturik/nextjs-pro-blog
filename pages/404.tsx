@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 const notFoundPage = () => {
   return (
-    <div className="flex h-screen flex-col justify-center items-center">
-      <h2 className="text-9xl text-primary-red font-extrabold border-primary-black border-b">
+    <div className="flex h-screen flex-col justify-start items-center mt-20">
+      <h2 className="text-9xl text-primary-red font-extrabold border-primary-red border-b">
         404
       </h2>
       <span className="font-medium text-primary-black pt-3">

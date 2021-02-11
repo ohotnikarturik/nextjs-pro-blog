@@ -1,15 +1,17 @@
 export interface ButtonProps {
   label: string
-  path: string  // fix
-  icon?: any // fix
+  path: string
+  onClick?: () => void
+}
+export interface ButtonDropDownMenuProps {
+  label: string
   onClick?: () => void
   isMenuOpen?: boolean
 }
-
 export interface TitleProps {
   label: string
 }
-
 export interface SubtitleProps {
   label: string
+  cardStyle?: boolean
 }
