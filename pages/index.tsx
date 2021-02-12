@@ -19,8 +19,8 @@ export default function Home() {
       <section className="h-screen">
         <div className="container h-full flex flex-col justify-evenly ">
           <div className="w-full relative">
-            <div className="flex flex-col items-center md:items-start z-50">
-              <h1 className="text-primary-black text-center md:text-left font-bold text-5xl mb-3">
+            <div className="flex flex-col items-center md:items-start z-20">
+              <h1 className="text-primary-black text-center md:text-left font-bold text-4xl mb-3">
                 Welcome to <span className="text-primary-black">Pro</span>
                 <span className="text-primary-red">Blog</span> web app
               </h1>
@@ -40,7 +40,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="flex z-50 justify-center md:justify-start">
+          <div className="flex z-20 justify-center md:justify-start">
             <SocialItems />
           </div>
         </div>

@@ -14,6 +14,7 @@ export interface TitleProps {
 export interface SubtitleProps {
   label: string
   boldStyle?: boolean
+  color?: string
 }
 export interface BadgeProps {
   label: string

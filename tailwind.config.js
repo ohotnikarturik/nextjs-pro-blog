@@ -29,6 +29,9 @@ module.exports = {
         center: true,
         padding: '1rem',
       },
+      fontSize: {
+        '4xl': '2.6rem',
+      },
     },
   },
   variants: {

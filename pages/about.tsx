@@ -35,23 +35,28 @@ const about = () => {
           src="/about-img.jpg"
           alt="Read blog image"
           width={900}
-          height={500}
+          height={400}
           layout="responsive"
-          quality={100}
+          quality={50}
+          objectFit="cover"
         />
-        <div className="my-8">
-          <Subtitle
-            boldStyle
-            label="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          />
+        <div className="flex justify-center">
+          <div className="w-full sm:w-3/4 md:w-4/5 lg:w-2/3 xl:w-3/5">
+            <div className="my-8">
+              <Subtitle
+                boldStyle
+                label="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              />
+            </div>
+            <ul>
+              {contentList.map((item) => (
+                <li key={item.id} className="mb-10">
+                  <p>{item.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <ul>
-          {contentList.map((item) => (
-            <li key={item.id} className="mb-10">
-              <p>{item.text}</p>
-            </li>
-          ))}
-        </ul>
       </section>
     </>
   )

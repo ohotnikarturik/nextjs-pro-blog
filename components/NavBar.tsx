@@ -9,32 +9,40 @@ const navBarItems = [
 ]
 export interface NavBarProps {
   footerStyle?: boolean
+  overlayStyle?: boolean
 }
 
-const NavBar = ({ footerStyle }: NavBarProps) => {
+const NavBar = ({ footerStyle, overlayStyle }: NavBarProps) => {
   const router = useRouter()
 
   return (
     <nav>
-      <ul className="flex">
+      <ul className={`flex ${overlayStyle && 'flex-col text-center mb-20'}`}>
         {navBarItems.map((item) => (
-          <li className={`${footerStyle ? 'mx-3 ' : 'ml-9'}`} key={item.path}>
+          <li
+            className={`${footerStyle ? 'mx-3 ' : 'ml-9'} ${
+              overlayStyle && 'my-5'
+            }`}
+            key={item.path}
+          >
             <Link href={item.path}>
               <a
                 className={`${
                   router.pathname === item.path &&
                   `border-primary-${
                     footerStyle ? 'none' : 'crimson'
-                  } text-primary-${footerStyle ? 'pink' : 'crimson'}`
-                } border-b-2 border-transparent text-primary-${
+                  } text-primary-${footerStyle ? 'pink' : 'crimson '}`
+                } border-b-2 font-leckerli border-transparent text-primary-${
                   footerStyle ? 'white' : 'red'
                 } font-${footerStyle ? 'light' : 'medium'} text-${
-                  footerStyle ? 'base' : 'lg'
+                  footerStyle ? 'base' : 'xl'
                 } hover:text-primary-${
                   footerStyle ? 'pink' : 'crimson'
                 } hover:border-primary-${
                   footerStyle ? 'none' : 'crimson'
-                } hover:border-b-2 transition ease-in duration-200`}
+                } hover:border-b-2 transition ease-in duration-200 ${
+                  overlayStyle && 'text-3xl font-bold font-leckerli'
+                }`}
               >
                 {item.label}
               </a>

@@ -1,11 +1,16 @@
-import { useRouter } from 'next/router'
-import HamburgerMenu from './HamburgerMenu'
+import React, { useState } from 'react'
 
+import HamburgerMenu from './HamburgerMenu'
 import Logo from './Logo'
 import NavBar from './NavBar'
+import OverlayMenu from './OverlayMenu'
 
 const Header = () => {
-  const router = useRouter()
+  const [isOverlayMenuOpen, setIsOverlayMenuOpen] = useState(false)
+
+  const onClickOverlayMenu = () => {
+    setIsOverlayMenuOpen(!isOverlayMenuOpen)
+  }
 
   return (
     <header className="h-20 shadow-sm">
@@ -16,7 +21,11 @@ const Header = () => {
             <NavBar />
           </div>
           <div className="block md:hidden">
-            <HamburgerMenu />
+            {isOverlayMenuOpen ? (
+              <OverlayMenu onClick={onClickOverlayMenu} />
+            ) : (
+              <HamburgerMenu onClick={onClickOverlayMenu} />
+            )}
           </div>
         </div>
       </div>

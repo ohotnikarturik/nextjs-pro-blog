@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Formik } from 'formik'
 import { object, string } from 'yup'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 import Subtitle from './Subtitle'
 
@@ -83,11 +85,15 @@ const FormContact = () => {
                 onSubmit={handleSubmit}
                 className="flex flex-col items-center h-full w-full"
               >
-                <div className="w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3">
+                <div className="w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 flex justify-between">
                   <Subtitle
+                    color="red"
                     boldStyle
-                    label="Fill form and send a message please"
+                    label="Send message please . . ."
                   />
+                  <div className="inline-block text-primary-red transform -rotate-45">
+                    <FontAwesomeIcon width={20} icon={faEnvelope} />
+                  </div>
                 </div>
                 <label className="flex flex-col justify-end mb-4 h-16 w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3">
                   <div className="flex w-full">
@@ -184,8 +190,8 @@ const FormContact = () => {
                   <button
                     className={`focus:outline-none ${
                       !dirty &&
-                      'opacity-50 cursor-not-allowed hover:bg-primary-silver'
-                    } py-2 px-4 bg-primary-silver hover:bg-gray-200 transition ease-in duration-200 text-primary-red rounded-md shadow-md font-medium`}
+                      'opacity-50 cursor-not-allowed hover:bg-primary-black'
+                    } py-2 px-4 bg-primary-black hover:bg-gray-200 transition ease-in duration-200 text-primary-white rounded-md shadow-md font-medium`}
                     onClick={handleReset}
                     type="reset"
                   >

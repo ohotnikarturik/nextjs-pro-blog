@@ -18,7 +18,7 @@ const blog = () => {
         <div className="container mt-14 mb-7">
           <Title label="Blog." />
         </div>
-        <div className="sticky top-0 z-50 mb-14 bg-primary-white opacity-95">
+        <div className="sticky top-0 z-20 mb-14 bg-primary-white opacity-95">
           <div className="container relative">
             <SearchFilterSortPanel />
           </div>
