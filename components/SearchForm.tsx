@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const SearchInput = () => {
+const SearchForm = () => {
   const [inputValue, setInputValue] = useState('')
   console.log(inputValue)
 
@@ -12,7 +12,7 @@ const SearchInput = () => {
   return (
     <form className="relative w-64">
       <input
-        className=" placeholder-primary-red shadow-md font-semibold border-2 text-primary-crimson border-primary-red bg-white h-10 pl-4 pr-9 focus:border-primary-crimson rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200"
+        className=" placeholder-primary-red placeholder-opacity-50 shadow-md font-semibold border-2 text-primary-crimson border-primary-red bg-white h-10 pl-4 pr-9 focus:border-primary-crimson rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200"
         type="text"
         placeholder="Search Post by Title..."
         name="search"
@@ -26,4 +26,4 @@ const SearchInput = () => {
   )
 }
 
-export default SearchInput
+export default SearchForm

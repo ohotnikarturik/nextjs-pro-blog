@@ -1,8 +1,11 @@
+/* ./styles/globals.css */
+
 /* google font nunito */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 /* google font leckerli one */
 @import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
-/* ./styles/globals.css */
+
+/*tailwind css*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,4 +16,42 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 300;
   color: #828282;
+
+}
+
+/* responsiveness */
+@media (min-width: 0px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  html {
+    font-size: 17px;
+  }
 }

@@ -26,6 +26,9 @@ module.exports = {
         center: true,
         padding: '1rem',
       },
+      screens: {
+        s: '480px',
+      },
     },
   },
   variants: {
