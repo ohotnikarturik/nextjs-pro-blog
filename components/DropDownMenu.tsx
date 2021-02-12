@@ -12,11 +12,9 @@ export interface DropDownMenuProps {
 
 const DropDownMenu = ({ onClick, divRef }: DropDownMenuProps) => {
   return (
-    <div
-      ref={divRef}
-      className="left-4 top-16 mt-3 absolute rounded-lg shadow-lg overflow-hidden"
-    >
+    <div ref={divRef} className=" rounded-lg shadow-lg overflow-hidden">
       <ul className="w-56">
+        {' '}
         {dropDownMenuItems.map((item) => (
           <li
             onClick={() => onClick(item.category)}

@@ -10,7 +10,7 @@ const SearchForm = () => {
   }
 
   return (
-    <form className="relative w-64">
+    <form className="relative w-full sm:w-3/4 md:w-64">
       <input
         className=" placeholder-primary-red placeholder-opacity-50 shadow-md font-semibold border-2 text-primary-crimson border-primary-red bg-white h-10 pl-4 pr-9 focus:border-primary-crimson rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200"
         type="text"

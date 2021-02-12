@@ -33,23 +33,25 @@ const SearchFilterSortPanel = () => {
   }, [])
 
   return (
-    <div className="flex h-24">
-      <div className="w-1/3 flex items-center justify-start">
+    <div className="flex flex-col justify-around md:justify-start md:flex-row h-40 md:h-24">
+      <div className="w-full md:flex-1 flex items-center justify-start">
         <ButtonDropDownMenu
           onClick={onClickMenuOpen}
           label={category}
           isMenuOpen={isMenuOpen}
         />
       </div>
-      <div className="w-1/3 flex items-center justify-center">
+      <div className="w-full md:flex-1 order-first md:order-none flex items-center justify-start md:justify-center">
         <SearchForm />
       </div>
-      <div className="w-1/3 flex items-center justify-end">
+      <div className="w-full md:flex-1 flex items-center justify-end">
         <SortItem />
       </div>
-      {isMenuOpen && (
-        <DropDownMenu divRef={divRef} onClick={onClickChooseCategory} />
-      )}
+      <div className="left-4 top-24 md:top-16 mt-3 absolute">
+        {isMenuOpen && (
+          <DropDownMenu divRef={divRef} onClick={onClickChooseCategory} />
+        )}
+      </div>
     </div>
   )
 }

@@ -18,13 +18,13 @@ export default function Home() {
 
       <section className="h-screen">
         <div className="container h-full flex flex-col justify-evenly ">
-          <div className="flex w-full relative">
-            <div className="flex flex-col items-start w-3/4 z-50">
-              <h1 className="text-primary-black font-bold text-5xl mb-3">
+          <div className="w-full relative">
+            <div className="flex flex-col items-center md:items-start z-50">
+              <h1 className="text-primary-black text-center md:text-left font-bold text-5xl mb-3">
                 Welcome to <span className="text-primary-black">Pro</span>
                 <span className="text-primary-red">Blog</span> web app
               </h1>
-              <div className="mb-8">
+              <div className="mb-8 text-center md:text-left">
                 <Subtitle label="Here you can find and read the most popular topics" />
               </div>
               <div className="mb-5">
@@ -40,7 +40,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="z-50">
+          <div className="flex z-50 justify-center md:justify-start">
             <SocialItems />
           </div>
         </div>

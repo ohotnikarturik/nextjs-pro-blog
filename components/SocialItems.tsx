@@ -31,7 +31,7 @@ const SocialItems = ({ footerStyle }: SocialItemsProps) => {
             footerStyle ? 'white' : 'red'
           } hover:text-primary-${
             footerStyle ? 'red' : 'crimson'
-          } mr-4 transition ease-in duration-200 cursor-pointer`}
+          } mx-2 md:mx-0 md:mr-4 transition ease-in duration-200 cursor-pointer`}
           key={item.id}
         >
           <a href={item.href} rel="noreferrer" target="_blank">
