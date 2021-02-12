@@ -7,7 +7,11 @@ import {
   faTwitterSquare,
   faInstagramSquare,
 } from '@fortawesome/free-brands-svg-icons'
-import { faChevronDown, faSearch } from '@fortawesome/free-solid-svg-icons'
+import {
+  faBars,
+  faChevronDown,
+  faSearch,
+} from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '../components/Layout'
 import '../styles/globals.css'
@@ -18,7 +22,8 @@ library.add(
   faTwitterSquare,
   faInstagramSquare,
   faChevronDown,
-  faSearch
+  faSearch,
+  faBars
 )
 
 function MyApp({ Component, pageProps }: AppProps) {

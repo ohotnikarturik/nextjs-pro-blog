@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      screens: {
+        s: '480px',
+      },
       colors: {
         primary: {
           red: '#F67280',
@@ -25,9 +28,6 @@ module.exports = {
       container: {
         center: true,
         padding: '1rem',
-      },
-      screens: {
-        s: '480px',
       },
     },
   },

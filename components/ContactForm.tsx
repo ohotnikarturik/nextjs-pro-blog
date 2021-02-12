@@ -83,6 +83,12 @@ const FormContact = () => {
                 onSubmit={handleSubmit}
                 className="flex flex-col items-center h-full w-full"
               >
+                <div className="w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3">
+                  <Subtitle
+                    boldStyle
+                    label="Fill form and send a message please"
+                  />
+                </div>
                 <label className="flex flex-col justify-end mb-4 h-16 w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3">
                   <div className="flex w-full">
                     {errors.name && touched.name && (

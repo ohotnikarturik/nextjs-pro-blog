@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && next start",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
@@ -29,9 +29,5 @@
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1",
     "typescript": "^4.1.4"
-  },
-  "cacheDirectories": [
-    "node_modules/",
-    ".next/cache/"
-  ]
+  }
 }
