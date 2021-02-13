@@ -1,16 +1,14 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
+import { NavBarProps } from '../interfaces/'
+
 const navBarItems = [
   { label: 'Home', path: '/' },
   { label: 'Blog', path: '/blog' },
   { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
 ]
-export interface NavBarProps {
-  footerStyle?: boolean
-  overlayStyle?: boolean
-}
 
 const NavBar = ({ footerStyle, overlayStyle }: NavBarProps) => {
   const router = useRouter()

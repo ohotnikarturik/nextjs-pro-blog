@@ -1,8 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-export interface HamburgerMenuProps {
-  onClick: () => void
-}
+
+import { HamburgerMenuProps } from '../interfaces'
 
 const HamburgerMenu = ({ onClick }: HamburgerMenuProps) => {
   return (

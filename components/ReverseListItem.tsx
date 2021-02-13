@@ -5,11 +5,9 @@ import {
   faSortAmountDownAlt,
 } from '@fortawesome/free-solid-svg-icons'
 
-export interface SortItemProps {
-  onClickReversPosts: () => void
-}
+import { ReverseListItemProps } from '../interfaces/'
 
-const ReverseListItem = ({ onClickReversPosts }: SortItemProps) => {
+const ReverseListItem = ({ onClickReversPosts }: ReverseListItemProps) => {
   const [switchIcon, setSwitchIcon] = useState(false)
 
   return (

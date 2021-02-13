@@ -6,6 +6,8 @@ import {
   faTwitterSquare,
 } from '@fortawesome/free-brands-svg-icons'
 
+import { SocialItemsProps } from '../interfaces/'
+
 const socialIcons = [
   {
     id: 1,
@@ -17,10 +19,6 @@ const socialIcons = [
   { id: 3, size: 25, name: faTwitterSquare, href: 'https://twitter.com/' },
   { id: 4, size: 25, name: faLinkedin, href: 'https://www.linkedin.com/' },
 ]
-
-export interface SocialItemsProps {
-  footerStyle?: boolean
-}
 
 const SocialItems = ({ footerStyle }: SocialItemsProps) => {
   return (

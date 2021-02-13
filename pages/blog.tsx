@@ -117,7 +117,7 @@ const blog = () => {
         <meta name="keywords" content="blog web application" />
       </Head>
 
-      <section className="min-h-screen flex flex-col justify-start">
+      <section className="flex flex-col justify-start">
         <div className="container mt-14 mb-7">
           <Title label="Blog." />
         </div>
@@ -130,7 +130,7 @@ const blog = () => {
             />
           </div>
         </div>
-        <div className="container flex items-center justify-center mb-28">
+        <div className="container flex items-center justify-center pb-40">
           {!posts.length ? (
             <Subtitle
               boldStyle
@@ -141,7 +141,7 @@ const blog = () => {
             <PostCard posts={posts} />
           )}
         </div>
-        <div className="container mb-10 flex justify-center mt-auto">
+        <div className="container mb-20 flex justify-center mt-auto">
           <Pagination />
         </div>
       </section>

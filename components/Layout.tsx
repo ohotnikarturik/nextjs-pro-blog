@@ -5,11 +5,9 @@ import Header from './Header'
 
 const Layout: React.FunctionComponent = ({ children }) => {
   return (
-    <div className="flex flex-col justify-between">
-      <div>
-        <Header />
-        <main>{children}</main>
-      </div>
+    <div className="flex h-screen flex-col justify-between">
+      <Header />
+      <main>{children}</main>
       <Footer />
     </div>
   )

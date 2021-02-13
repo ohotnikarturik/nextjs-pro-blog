@@ -1,3 +1,5 @@
+import { DropDownMenuProps } from '../interfaces'
+
 const dropDownMenuItems = [
   { id: 0, category: 'All Categories' },
   { id: 1, category: 'Lifestyle' },
@@ -5,12 +7,6 @@ const dropDownMenuItems = [
   { id: 3, category: 'Interviews' },
   { id: 4, category: 'Food' },
 ]
-
-export interface DropDownMenuProps {
-  onClickSetCategory: (value: string) => void
-  divRef: any // fix
-  category: string
-}
 
 const DropDownMenu = ({
   onClickSetCategory,

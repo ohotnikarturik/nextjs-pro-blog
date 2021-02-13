@@ -97,7 +97,7 @@ export default function Home() {
         </div>
       </section>
       <section className="min-h-screen relative">
-        <div className="container mt-10 mb-28 ">
+        <div className="container mt-10 pb-40 ">
           <div className="mb-7">
             <Title label="Latest Posts." />
           </div>

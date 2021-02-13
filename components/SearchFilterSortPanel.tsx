@@ -4,12 +4,7 @@ import ButtonDropDownMenu from './ButtonDropDownMenu'
 import DropDownMenu from './DropDownMenu'
 import SearchForm from './SearchForm'
 import ReverseListItem from './ReverseListItem'
-
-export interface SearchFilterSortPanelProps {
-  getSearchInputValue: (value: string) => void
-  onClickReversPosts: () => void
-  onSelectCategory: (category: string) => void
-}
+import { SearchFilterSortPanelProps } from '../interfaces/'
 
 const SearchFilterSortPanel = ({
   getSearchInputValue,
@@ -60,7 +55,7 @@ const SearchFilterSortPanel = ({
       <div className="w-full md:flex-1 flex items-center justify-end">
         <ReverseListItem onClickReversPosts={onClickReversPosts} />
       </div>
-      <div className="left-8 top-24 md:top-16 mt-3 absolute">
+      <div className="left-8 top-28 md:top-16 mt-3 absolute">
         {isMenuOpen && (
           <DropDownMenu
             divRef={divRef}

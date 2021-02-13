@@ -3,10 +3,7 @@ import { faWindowClose } from '@fortawesome/free-solid-svg-icons'
 
 import Logo from './Logo'
 import NavBar from './NavBar'
-
-export interface OverlayMenuProps {
-  onClick: () => void
-}
+import { OverlayMenuProps } from '../interfaces/'
 
 const OverlayMenu = ({ onClick }: OverlayMenuProps) => {
   return (

@@ -1,8 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export interface SearchFormProps {
-  getSearchInputValue: (value: string) => void
-}
+import { SearchFormProps } from '../interfaces/'
 
 const SearchForm = ({ getSearchInputValue }: SearchFormProps) => {
   const onChangeInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -26,7 +26,7 @@ const about = () => {
         <meta name="keywords" content="blog web application" />
       </Head>
 
-      <section className="container min-h-screen flex flex-col pb-16">
+      <section className="container min-h-screen flex flex-col pb-40">
         <div className="mb-7 mt-14">
           <Title label="About." />
         </div>

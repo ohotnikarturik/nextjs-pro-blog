@@ -1,7 +1,6 @@
 import Link from 'next/link'
-export interface LogoProps {
-  footerStyle?: boolean
-}
+
+import { LogoProps } from '../interfaces/'
 
 const Logo = ({ footerStyle }: LogoProps) => {
   return (

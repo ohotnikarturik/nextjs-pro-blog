@@ -12,7 +12,7 @@ const contact = () => {
         <meta name="keywords" content="blog web application" />
       </Head>
 
-      <section className="container h-full flex flex-col pb-16">
+      <section className="container h-full flex flex-col pb-40">
         <div className="mt-14">
           <div className="mb-7">
             <Title label="Contact." />
