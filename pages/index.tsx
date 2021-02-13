@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Button from '../components/Button'
 import Subtitle from '../components/Subtitle'
 import SocialItems from '../components/SocialItems'
-import CardList from '../components/CardList'
+import PostCard from '../components/PostCard'
 import Title from '../components/Title'
 
 const posts = [
@@ -76,7 +76,7 @@ export default function Home() {
                 <span className="text-primary-red">Blog</span> web app
               </h1>
               <div className="mb-8 text-center md:text-left">
-                <Subtitle label="Here you can find and read the most popular topics" />
+                <Subtitle label="Here you can find and read Posts, the most popular topics" />
               </div>
               <div className="mb-5">
                 <Button label="Latest Posts" path="/" />
@@ -101,7 +101,7 @@ export default function Home() {
           <div className="mb-7">
             <Title label="Latest Posts." />
           </div>
-          <CardList posts={posts} />
+          <PostCard posts={posts} />
         </div>
       </section>
     </>

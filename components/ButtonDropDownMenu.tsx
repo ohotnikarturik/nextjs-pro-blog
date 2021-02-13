@@ -4,13 +4,13 @@ import { ButtonDropDownMenuProps } from '../interfaces/index'
 
 const ButtonDropDownMenu = ({
   label,
-  onClick,
+  onClickMenuOpen,
   isMenuOpen,
 }: ButtonDropDownMenuProps) => {
   return (
     <button
-      onClick={onClick}
-      className="flex justify-between shadow-md focus:outline-none focus:bg-primary-crimson items-center w-40 py-2 px-4 bg-primary-red hover:bg-primary-crimson transition ease-in duration-200 text-primary-white rounded-md font-medium"
+      onClick={onClickMenuOpen}
+      className="transform hover:scale-105 motion-reduce:transform-none flex justify-between shadow-md focus:outline-none focus:bg-primary-crimson items-center w-40 py-2 px-4 bg-primary-red hover:bg-primary-crimson transition ease-in duration-200 text-primary-white rounded-md font-medium"
     >
       {label}
       <div className={`ml-2 ${isMenuOpen ? 'transform rotate-180' : null}`}>

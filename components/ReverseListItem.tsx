@@ -6,19 +6,19 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 export interface SortItemProps {
-  onClickReversList: () => void
+  onClickReversPosts: () => void
 }
 
-const SortItem = ({ onClickReversList }: SortItemProps) => {
+const ReverseListItem = ({ onClickReversPosts }: SortItemProps) => {
   const [switchIcon, setSwitchIcon] = useState(false)
 
   return (
     <div
       onClick={() => {
         setSwitchIcon(!switchIcon)
-        onClickReversList()
+        onClickReversPosts()
       }}
-      className="text-primary-red cursor-pointer hover:text-primary-crimson transition ease-in duration-200"
+      className="transform hover:scale-105 motion-reduce:transform-none text-primary-red cursor-pointer hover:text-primary-crimson transition ease-in duration-200"
     >
       {!switchIcon ? (
         <FontAwesomeIcon width={30} icon={faSortAmountDown} />
@@ -29,4 +29,4 @@ const SortItem = ({ onClickReversList }: SortItemProps) => {
   )
 }
 
-export default SortItem
+export default ReverseListItem

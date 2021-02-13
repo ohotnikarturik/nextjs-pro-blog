@@ -107,8 +107,8 @@ const FormContact = () => {
                     aria-label="input-1"
                     className={
                       errors.name && touched.name
-                        ? 'placeholder-primary-purple placeholder-opacity-50 font-semibold border-2 text-primary-purple border-primary-purple bg-white h-10 pl-4 pr-9 focus:border-primary-purple rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
-                        : 'placeholder-primary-red placeholder-opacity-50 font-semibold border-2 text-primary-crimson border-primary-red bg-white h-10 pl-4 pr-9 focus:border-primary-crimson rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
+                        ? 'placeholder-primary-purple focus:shadow-xl placeholder-opacity-50 font-semibold border-2 text-primary-purple border-primary-purple bg-white h-10 pl-4 pr-9 focus:border-primary-purple rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
+                        : 'placeholder-primary-red focus:shadow-xl placeholder-opacity-50 font-semibold border-2 text-primary-crimson border-primary-red bg-white h-10 pl-4 pr-9 focus:border-primary-crimson rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
                     }
                     type="text"
                     placeholder="Name..."
@@ -130,8 +130,8 @@ const FormContact = () => {
                     aria-label="input-2"
                     className={
                       errors.email && touched.email
-                        ? 'placeholder-primary-purple placeholder-opacity-50 font-semibold border-2 text-primary-purple border-primary-purple bg-white h-10 pl-4 pr-9 focus:border-primary-purple rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
-                        : 'placeholder-primary-red placeholder-opacity-50 font-semibold border-2 text-primary-crimson border-primary-red bg-white h-10 pl-4 pr-9 focus:border-primary-crimson rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
+                        ? 'placeholder-primary-purple focus:shadow-xl placeholder-opacity-50 font-semibold border-2 text-primary-purple border-primary-purple bg-white h-10 pl-4 pr-9 focus:border-primary-purple rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
+                        : 'placeholder-primary-red focus:shadow-xl placeholder-opacity-50 font-semibold border-2 text-primary-crimson border-primary-red bg-white h-10 pl-4 pr-9 focus:border-primary-crimson rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
                     }
                     type="text"
                     placeholder="Email..."
@@ -153,8 +153,8 @@ const FormContact = () => {
                     aria-label="input-3"
                     className={
                       errors.subject && touched.subject
-                        ? 'placeholder-primary-purple placeholder-opacity-50 font-semibold border-2 text-primary-purple border-primary-purple bg-white h-10 pl-4 pr-9 focus:border-primary-purple rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
-                        : 'placeholder-primary-red placeholder-opacity-50 font-semibold border-2 text-primary-crimson border-primary-red bg-white h-10 pl-4 pr-9 focus:border-primary-crimson rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
+                        ? 'placeholder-primary-purple focus:shadow-xl placeholder-opacity-50 font-semibold border-2 text-primary-purple border-primary-purple bg-white h-10 pl-4 pr-9 focus:border-primary-purple rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
+                        : 'placeholder-primary-red focus:shadow-xl placeholder-opacity-50 font-semibold border-2 text-primary-crimson border-primary-red bg-white h-10 pl-4 pr-9 focus:border-primary-crimson rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
                     }
                     type="text"
                     placeholder="Subject..."
@@ -176,8 +176,8 @@ const FormContact = () => {
                     aria-label="textarea"
                     className={
                       errors.message && touched.message
-                        ? 'placeholder-primary-purple placeholder-opacity-50 resize-none font-semibold border-2 text-primary-purple border-primary-purple bg-white h-44 pl-4 py-3 pr-9 focus:border-primary-purple rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
-                        : 'placeholder-primary-red placeholder-opacity-50 resize-none font-semibold border-2 text-primary-crimson border-primary-red bg-white h-44 pl-4 py-3 pr-9 focus:border-primary-crimson rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
+                        ? 'placeholder-primary-purple focus:shadow-xl placeholder-opacity-50 resize-none font-semibold border-2 text-primary-purple border-primary-purple bg-white h-44 pl-4 py-3 pr-9 focus:border-primary-purple rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
+                        : 'placeholder-primary-red focus:shadow-xl placeholder-opacity-50 resize-none font-semibold border-2 text-primary-crimson border-primary-red bg-white h-44 pl-4 py-3 pr-9 focus:border-primary-crimson rounded-lg text-sm focus:outline-none w-full transition ease-in duration-200'
                     }
                     placeholder="Type message..."
                     name="message"
@@ -188,17 +188,17 @@ const FormContact = () => {
                 </label>
                 <div className="w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 flex justify-between mt-5">
                   <button
-                    className={`focus:outline-none ${
+                    className={`transform hover:scale-105 motion-reduce:transform-none focus:outline-none ${
                       !dirty &&
-                      'opacity-50 cursor-not-allowed hover:bg-primary-black'
-                    } py-2 px-4 bg-primary-black hover:bg-gray-200 transition ease-in duration-200 text-primary-white rounded-md shadow-md font-medium`}
+                      'opacity-50 cursor-not-allowed hover:bg-primary-gray'
+                    } py-2 px-4 bg-primary-gray hover:bg-primary-gray transition ease-in duration-200 text-primary-white rounded-md shadow-md font-medium`}
                     onClick={handleReset}
                     type="reset"
                   >
                     Reset
                   </button>
                   <button
-                    className="focus:outline-none py-2 px-4 bg-primary-red hover:bg-primary-crimson transition ease-in duration-200 text-primary-white rounded-md shadow-md font-medium"
+                    className="transform hover:scale-105 motion-reduce:transform-none focus:outline-none py-2 px-4 bg-primary-red hover:bg-primary-crimson transition ease-in duration-200 text-primary-white rounded-md shadow-md font-medium"
                     type="submit"
                   >
                     Send

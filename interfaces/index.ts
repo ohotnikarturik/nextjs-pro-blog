@@ -5,7 +5,7 @@ export interface ButtonProps {
 }
 export interface ButtonDropDownMenuProps {
   label: string
-  onClick?: () => void
+  onClickMenuOpen?: () => void
   isMenuOpen?: boolean
 }
 export interface TitleProps {

@@ -6,7 +6,7 @@ import { CardListProps } from '../interfaces'
 
 const CardList = ({ posts }: CardListProps) => {
   return (
-    <ul className="min-h-screen grid lg:grid-cols-3 gap-x-10 gap-y-28 md:grid-cols-2">
+    <ul className="grid lg:grid-cols-3 gap-x-10 gap-y-28 md:grid-cols-2">
       {posts.map((item) => (
         <li
           className="relative rounded-md shadow-lg hover:shadow-2xl cursor-pointer transition ease-in duration-200"

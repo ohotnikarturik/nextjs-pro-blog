@@ -4,12 +4,12 @@ import Head from 'next/head'
 
 import Title from '../components/Title'
 import SearchFilterSortPanel from '../components/SearchFilterSortPanel'
-import CardList from '../components/CardList'
+import PostCard from '../components/PostCard'
 import Pagination from '../components/Pagination'
 import { IPost } from '../interfaces'
 import Subtitle from '../components/Subtitle'
 
-const posts = [
+const postList = [
   {
     id: 1,
     title: 'Some Awesome topc',
@@ -74,23 +74,39 @@ const posts = [
 
 const blog = () => {
   const [searchFormValue, setSearchFormValue] = useState('')
-  const [newPostsArray, setNewPostsArray] = useState<Array<IPost>>([])
+  const [posts, setPosts] = useState<Array<IPost>>([])
+  console.log('newPostsArray======', posts)
 
   const getSearchInputValue = (value: string) => {
     setSearchFormValue(value)
   }
 
-  const onClickReversList = () => {
-    const reversedPostList = [...newPostsArray].reverse()
-    setNewPostsArray(reversedPostList)
+  const onClickReversPosts = () => {
+    const reversedPosts = [...posts].reverse()
+    setPosts(reversedPosts)
+  }
+
+  const onSelectCategory = (category: string) => {
+    console.log('category on blog', category)
+    if (category === 'All Categories') {
+      setPosts(postList)
+    } else {
+      const filteredCategory = postList.filter(
+        (item) => item.category === category
+      )
+
+      console.log('filteredCategory@@@', filteredCategory)
+      setPosts(filteredCategory)
+    }
   }
 
   useEffect(() => {
-    const result = posts.filter((post) =>
+    const filteredPosts = postList.filter((post) =>
       post.title.toLowerCase().includes(searchFormValue.toLocaleLowerCase())
     )
+    // console.log('&&&&&&', filteredPosts)
 
-    setNewPostsArray(result)
+    setPosts(filteredPosts)
   }, [searchFormValue])
 
   return (
@@ -109,19 +125,20 @@ const blog = () => {
           <div className="container relative">
             <SearchFilterSortPanel
               getSearchInputValue={getSearchInputValue}
-              onClickReversList={onClickReversList}
+              onClickReversPosts={onClickReversPosts}
+              onSelectCategory={onSelectCategory}
             />
           </div>
         </div>
         <div className="container flex items-center justify-center mb-28">
-          {!newPostsArray.length ? (
+          {!posts.length ? (
             <Subtitle
               boldStyle
               color="purple"
               label="No matches found. Try again!"
             />
           ) : (
-            <CardList posts={newPostsArray} />
+            <PostCard posts={posts} />
           )}
         </div>
         <div className="container mb-10 flex justify-center mt-auto">

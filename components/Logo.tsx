@@ -6,7 +6,7 @@ export interface LogoProps {
 const Logo = ({ footerStyle }: LogoProps) => {
   return (
     <Link href="/">
-      <a>
+      <a className="transform hover:scale-105 motion-reduce:transform-none transition ease-in duration-200">
         <span
           className={`font-leckerli cursor-pointer text-3xl text-primary-${
             footerStyle ? 'white' : 'black'

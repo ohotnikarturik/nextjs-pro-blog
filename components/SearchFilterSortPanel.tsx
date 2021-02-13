@@ -3,48 +3,53 @@ import React, { useState, useEffect, useRef } from 'react'
 import ButtonDropDownMenu from './ButtonDropDownMenu'
 import DropDownMenu from './DropDownMenu'
 import SearchForm from './SearchForm'
-import ReverseListIcon from './ReverseListIcon'
+import ReverseListItem from './ReverseListItem'
 
 export interface SearchFilterSortPanelProps {
   getSearchInputValue: (value: string) => void
-  onClickReversList: () => void
+  onClickReversPosts: () => void
+  onSelectCategory: (category: string) => void
 }
 
 const SearchFilterSortPanel = ({
   getSearchInputValue,
-  onClickReversList,
+  onClickReversPosts,
+  onSelectCategory,
 }: SearchFilterSortPanelProps) => {
   const divRef = React.useRef<HTMLElement | null>(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [category, setCategory] = useState('Categories')
+  const [category, setCategory] = useState('All Categories')
 
   const onClickMenuOpen = () => setIsMenuOpen(!isMenuOpen)
-  const onClickChooseCategory = (value: string) => {
+  const onClickSetCategory = (value: string) => {
     setCategory(value)
+    onSelectCategory(value)
     setIsMenuOpen(false)
   }
 
-  const onMouseDown = (event: MouseEvent) => {
-    if (divRef.current?.contains(event.target as Node)) {
-      console.log('chose category:', divRef.current)
-    }
-    setIsMenuOpen(false)
-  }
+  // const onMouseDown = (event: MouseEvent) => {
+  //   if (divRef.current?.contains(event.target as Node)) {
+  //     console.log('category', category)
 
-  useEffect(() => {
-    // add when mounted
-    document.addEventListener('mousedown', onMouseDown)
-    // return function to be called when unmounted
-    return () => {
-      document.removeEventListener('mousedown', onMouseDown)
-    }
-  }, [])
+  //     // onSelectCategory(category)
+  //   }
+  //   setIsMenuOpen(false)
+  // }
+
+  // useEffect(() => {
+  //   // add when mounted
+  //   document.addEventListener('mousedown', onMouseDown)
+  //   // return function to be called when unmounted
+  //   return () => {
+  //     document.removeEventListener('mousedown', onMouseDown)
+  //   }
+  // }, [])
 
   return (
     <div className="flex flex-col justify-around md:justify-start md:flex-row h-40 md:h-24">
       <div className="w-full md:flex-1 mt-4 md:mt-0 flex items-center justify-start">
         <ButtonDropDownMenu
-          onClick={onClickMenuOpen}
+          onClickMenuOpen={onClickMenuOpen}
           label={category}
           isMenuOpen={isMenuOpen}
         />
@@ -53,11 +58,15 @@ const SearchFilterSortPanel = ({
         <SearchForm getSearchInputValue={getSearchInputValue} />
       </div>
       <div className="w-full md:flex-1 flex items-center justify-end">
-        <ReverseListIcon onClickReversList={onClickReversList} />
+        <ReverseListItem onClickReversPosts={onClickReversPosts} />
       </div>
       <div className="left-8 top-24 md:top-16 mt-3 absolute">
         {isMenuOpen && (
-          <DropDownMenu divRef={divRef} onClick={onClickChooseCategory} />
+          <DropDownMenu
+            divRef={divRef}
+            onClickSetCategory={onClickSetCategory}
+            category={category}
+          />
         )}
       </div>
     </div>
