@@ -14,7 +14,6 @@ const DropDownMenu = ({ onClick, divRef }: DropDownMenuProps) => {
   return (
     <div ref={divRef} className=" rounded-lg shadow-lg overflow-hidden">
       <ul className="w-56">
-        {' '}
         {dropDownMenuItems.map((item) => (
           <li
             onClick={() => onClick(item.category)}

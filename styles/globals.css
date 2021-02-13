@@ -19,6 +19,14 @@ body {
   position: relative;
 }
 
+input[type="text"] {
+  font-size: 16px;
+}
+
+textarea {
+  font-size: 16px !important;
+}
+
 /* responsiveness */
 @media (min-width: 0px) {
   html {

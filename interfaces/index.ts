@@ -20,3 +20,17 @@ export interface BadgeProps {
   label: string
   colour: string
 }
+export interface IPost {
+  id: number
+  title: string
+  postImg: string
+  textContent: string
+  authorImg: string
+  authorName: string
+  date: string
+  badgeColor: string
+  category: string
+}
+export interface CardListProps {
+  posts: IPost[]
+}

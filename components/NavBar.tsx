@@ -21,7 +21,7 @@ const NavBar = ({ footerStyle, overlayStyle }: NavBarProps) => {
         {navBarItems.map((item) => (
           <li
             className={`${footerStyle ? 'mx-3 ' : 'ml-9'} ${
-              overlayStyle && 'my-5'
+              overlayStyle && 'my-7'
             }`}
             key={item.path}
           >
@@ -35,7 +35,7 @@ const NavBar = ({ footerStyle, overlayStyle }: NavBarProps) => {
                 } border-b-2 font-leckerli border-transparent text-primary-${
                   footerStyle ? 'white' : 'red'
                 } font-${footerStyle ? 'light' : 'medium'} text-${
-                  footerStyle ? 'base' : 'xl'
+                  footerStyle ? 'lg' : 'xl'
                 } hover:text-primary-${
                   footerStyle ? 'pink' : 'crimson'
                 } hover:border-primary-${

@@ -85,13 +85,13 @@ const FormContact = () => {
                 onSubmit={handleSubmit}
                 className="flex flex-col items-center h-full w-full"
               >
-                <div className="w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 flex justify-between">
+                <div className="w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 flex justify-between items-center">
                   <Subtitle
                     color="red"
                     boldStyle
                     label="Send message please . . ."
                   />
-                  <div className="inline-block text-primary-red transform -rotate-45">
+                  <div className="inline-block mr-auto ml-3 text-primary-red transform -rotate-12">
                     <FontAwesomeIcon width={20} icon={faEnvelope} />
                   </div>
                 </div>
@@ -186,7 +186,7 @@ const FormContact = () => {
                     onBlur={handleBlur('message')}
                   />
                 </label>
-                <div className="w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 flex justify-between">
+                <div className="w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 flex justify-between mt-5">
                   <button
                     className={`focus:outline-none ${
                       !dirty &&

@@ -5,12 +5,19 @@ import {
   faSortAmountDownAlt,
 } from '@fortawesome/free-solid-svg-icons'
 
-const SortItem = () => {
+export interface SortItemProps {
+  onClickReversList: () => void
+}
+
+const SortItem = ({ onClickReversList }: SortItemProps) => {
   const [switchIcon, setSwitchIcon] = useState(false)
 
   return (
     <div
-      onClick={() => setSwitchIcon(!switchIcon)}
+      onClick={() => {
+        setSwitchIcon(!switchIcon)
+        onClickReversList()
+      }}
       className="text-primary-red cursor-pointer hover:text-primary-crimson transition ease-in duration-200"
     >
       {!switchIcon ? (

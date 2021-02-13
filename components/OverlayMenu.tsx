@@ -12,7 +12,7 @@ const OverlayMenu = ({ onClick }: OverlayMenuProps) => {
   return (
     <div
       onClick={() => onClick()}
-      className="bg-primary-white top-0 left-0 fixed w-full h-full z-50 flex flex-col opacity-95"
+      className="bg-primary-white top-0 left-0 fixed w-full h-full z-50 flex flex-col "
     >
       <div className="h-20 shadow-sm">
         <div className="container flex justify-between items-center h-full">
