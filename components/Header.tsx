@@ -13,7 +13,7 @@ const Header = () => {
   }
 
   return (
-    <header className="h-20 shadow-sm">
+    <header id="/header" className="h-20 shadow-sm">
       <div className="container flex justify-between items-center h-full">
         <Logo />
         <div>

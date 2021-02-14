@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
 
 import Head from 'next/head'
 
@@ -72,10 +73,11 @@ const postList = [
   },
 ]
 
-const blog = () => {
+const blog = ({ articles }: any) => {
+  console.log(articles)
+
   const [searchFormValue, setSearchFormValue] = useState('')
   const [posts, setPosts] = useState<Array<IPost>>([])
-  console.log('newPostsArray======', posts)
 
   const getSearchInputValue = (value: string) => {
     setSearchFormValue(value)
@@ -87,7 +89,6 @@ const blog = () => {
   }
 
   const onSelectCategory = (category: string) => {
-    console.log('category on blog', category)
     if (category === 'All Categories') {
       setPosts(postList)
     } else {
@@ -95,7 +96,6 @@ const blog = () => {
         (item) => item.category === category
       )
 
-      console.log('filteredCategory@@@', filteredCategory)
       setPosts(filteredCategory)
     }
   }
@@ -104,7 +104,6 @@ const blog = () => {
     const filteredPosts = postList.filter((post) =>
       post.title.toLowerCase().includes(searchFormValue.toLocaleLowerCase())
     )
-    // console.log('&&&&&&', filteredPosts)
 
     setPosts(filteredPosts)
   }, [searchFormValue])
@@ -150,3 +149,18 @@ const blog = () => {
 }
 
 export default blog
+
+// interface Props {
+//   articles: any
+// }
+
+// export const getStaticProps: GetStaticProps = async () => {
+//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
+//   const articles = await res.json()
+
+//   return {
+//     props: {
+//       articles,
+//     },
+//   }
+// }

@@ -1,6 +1,7 @@
 export interface ButtonProps {
   label: string
   path: string
+  as?: string
   onClick?: () => void
 }
 export interface ButtonDropDownMenuProps {
@@ -18,7 +19,8 @@ export interface SubtitleProps {
 }
 export interface BadgeProps {
   label: string
-  colour: string
+  color: string
+  postStyle?: boolean
 }
 export interface IPost {
   id: number
@@ -66,4 +68,8 @@ export interface SearchFormProps {
 }
 export interface SocialItemsProps {
   footerStyle?: boolean
+}
+export interface ButtonToScrollProps {
+  label: string
+  path: string
 }

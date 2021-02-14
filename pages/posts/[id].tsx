@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import Subtitle from '../../components/Subtitle'
 import Title from '../../components/Title'
+import Badge from '../../components/Badge'
 
 const contentList = [
   {
@@ -50,16 +51,21 @@ const post = () => {
         <div className="mb-7 mt-14">
           <Title label="Post." />
         </div>
-        <Image
-          className="rounded-md overflow-hidden"
-          src="/single-post-img.jpg"
-          alt="Read blog image"
-          width={900}
-          height={400}
-          layout="responsive"
-          quality={50}
-          objectFit="cover"
-        />
+        <div className="relative">
+          <Image
+            className="rounded-md overflow-hidden"
+            src="/single-post-img.jpg"
+            alt="Read blog image"
+            width={900}
+            height={400}
+            layout="responsive"
+            quality={50}
+            objectFit="cover"
+          />
+          <div className="absolute top-0 left-0 ">
+            <Badge postStyle label="Some" color="red" />
+          </div>
+        </div>
         <div className="flex justify-center">
           <div className="flex flex-col w-full sm:w-3/4 md:w-4/5 lg:w-2/3 xl:w-3/5">
             <div className="mt-8 flex justify-between items-center ">

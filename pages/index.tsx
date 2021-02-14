@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-import Button from '../components/Button'
 import Subtitle from '../components/Subtitle'
 import SocialItems from '../components/SocialItems'
 import PostCard from '../components/PostCard'
 import Title from '../components/Title'
+import ButtonScroll from '../components/ButtonScroll'
 
 const posts = [
   {
@@ -79,7 +79,7 @@ export default function Home() {
                 <Subtitle label="Here you can find and read Posts, the most popular topics" />
               </div>
               <div className="mb-5">
-                <Button label="Latest Posts" path="/" />
+                <ButtonScroll label="Latest Posts" path="/latest-posts" />
               </div>
             </div>
             <div className="absolute z-10 top-0 right-0 invisible lg:visible">
@@ -96,7 +96,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="min-h-screen relative">
+      <section id="/latest-posts" className="min-h-screen relative">
         <div className="container mt-10 pb-40 ">
           <div className="mb-7">
             <Title label="Latest Posts." />
