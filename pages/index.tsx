@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import Subtitle from '../components/Subtitle'
 import SocialItems from '../components/SocialItems'
-import PostCard from '../components/PostCard'
+import PostCardList from '../components/PostCardList'
 import Title from '../components/Title'
 import ButtonScroll from '../components/ButtonScroll'
 
@@ -76,7 +76,7 @@ export default function Home() {
                 <span className="text-primary-red">Blog</span> web app
               </h1>
               <div className="mb-8 text-center md:text-left">
-                <Subtitle label="Here you can find and read Posts, the most popular topics" />
+                <Subtitle label="Here you can find and read posts on the most popular topics." />
               </div>
               <div className="mb-5">
                 <ButtonScroll label="Latest Posts" path="/latest-posts" />
@@ -97,11 +97,11 @@ export default function Home() {
         </div>
       </section>
       <section id="/latest-posts" className="min-h-screen relative">
-        <div className="container mt-10 pb-40 ">
+        <div className="container pt-40 pb-40 ">
           <div className="mb-7">
             <Title label="Latest Posts." />
           </div>
-          <PostCard posts={posts} />
+          <PostCardList posts={posts} />
         </div>
       </section>
     </>

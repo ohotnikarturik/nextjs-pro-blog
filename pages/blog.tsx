@@ -5,7 +5,7 @@ import Head from 'next/head'
 
 import Title from '../components/Title'
 import SearchFilterSortPanel from '../components/SearchFilterSortPanel'
-import PostCard from '../components/PostCard'
+import PostCardList from '../components/PostCardList'
 import Pagination from '../components/Pagination'
 import { IPost } from '../interfaces'
 import Subtitle from '../components/Subtitle'
@@ -137,7 +137,7 @@ const blog = ({ articles }: any) => {
               label="No matches found. Try again!"
             />
           ) : (
-            <PostCard posts={posts} />
+            <PostCardList posts={posts} />
           )}
         </div>
         <div className="container mb-20 flex justify-center mt-auto">

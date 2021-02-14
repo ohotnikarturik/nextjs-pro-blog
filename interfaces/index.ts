@@ -36,6 +36,9 @@ export interface IPost {
 export interface CardListProps {
   posts: IPost[]
 }
+export interface PostCardItemProps {
+  post: IPost
+}
 export interface DropDownMenuProps {
   onClickSetCategory: (value: string) => void
   divRef: any // fix
