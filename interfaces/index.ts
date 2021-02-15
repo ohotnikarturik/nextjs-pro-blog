@@ -49,7 +49,6 @@ export interface DropDownMenuProps {
   onClickSetCategory: (value: string) => void
   divRef: any // fix
   category: string
-  posts: any
 }
 export interface HamburgerMenuProps {
   onClick: () => void
