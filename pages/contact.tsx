@@ -1,17 +1,15 @@
-import Head from 'next/head'
+import Meta from '../components/Meta'
 import ContactForm from '../components/ContactForm'
-
 import Title from '../components/Title'
 
 const contact = () => {
   return (
     <>
-      <Head>
-        <title>ProBlog App | Contact</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="keywords" content="blog web application" />
-      </Head>
-
+      <Meta
+        title="ProBlog App | Contact"
+        description="Contact page"
+        keywords="contact"
+      />
       <section className="container h-full flex flex-col pb-40">
         <div className="mt-14">
           <div className="mb-7">

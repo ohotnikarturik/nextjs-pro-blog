@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
 
-import Head from 'next/head'
-
+import Meta from '../components/Meta'
 import Title from '../components/Title'
 import SearchFilterSortPanel from '../components/SearchFilterSortPanel'
 import PostCardList from '../components/PostCardList'
@@ -110,12 +109,11 @@ const blog = ({ articles }: any) => {
 
   return (
     <>
-      <Head>
-        <title>ProBlog App | Home</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="keywords" content="blog web application" />
-      </Head>
-
+      <Meta
+        title="ProBlog App | Blog"
+        description="Blog page"
+        keywords="blog, post, posts"
+      />
       <section className="flex flex-col justify-start">
         <div className="container mt-14 mb-7">
           <Title label="Blog." />

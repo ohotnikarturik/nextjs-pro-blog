@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Image from 'next/image'
 
 import Subtitle from '../components/Subtitle'
@@ -6,6 +5,7 @@ import SocialItems from '../components/SocialItems'
 import PostCardList from '../components/PostCardList'
 import Title from '../components/Title'
 import ButtonScroll from '../components/ButtonScroll'
+import Meta from '../components/Meta'
 
 const posts = [
   {
@@ -61,12 +61,11 @@ const posts = [
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>ProBlog App | Home</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="keywords" content="blog web application" />
-      </Head>
-
+      <Meta
+        title="ProBlog App | Home"
+        description="Home page"
+        keywords="latest posts"
+      />
       <section className="h-screen">
         <div className="container h-full flex flex-col justify-evenly ">
           <div className="w-full relative">

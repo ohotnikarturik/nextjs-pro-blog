@@ -1,6 +1,6 @@
-import Head from 'next/head'
 import Image from 'next/image'
 
+import Meta from '../components/Meta'
 import Subtitle from '../components/Subtitle'
 import Title from '../components/Title'
 
@@ -20,12 +20,11 @@ const contentList = [
 const about = () => {
   return (
     <>
-      <Head>
-        <title>ProBlog App | About</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="keywords" content="blog web application" />
-      </Head>
-
+      <Meta
+        title="ProBlog App | About"
+        description="About page"
+        keywords="about"
+      />
       <section className="container min-h-screen flex flex-col pb-40">
         <div className="mb-7 mt-14">
           <Title label="About." />

@@ -1,3 +1,8 @@
+export interface MetaProps {
+  title: string
+  keywords?: string
+  description?: string
+}
 export interface ButtonProps {
   label: string
   path: string

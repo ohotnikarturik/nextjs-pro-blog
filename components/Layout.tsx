@@ -5,13 +5,13 @@ import Footer from './Footer'
 import Header from './Header'
 
 const Layout: React.FunctionComponent = ({ children }) => {
-  const [isShowOverlay, setIsShowOverlay] = useState(false)
+  const [isShowButton, setIsShowButton] = useState(false)
 
   const scrollHandler = () => {
-    if (window.scrollY > 100) {
-      setIsShowOverlay(true)
+    if (window.scrollY > 200) {
+      setIsShowButton(true)
     } else {
-      setIsShowOverlay(false)
+      setIsShowButton(false)
     }
   }
 
@@ -26,7 +26,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
       <Header />
       <main>{children}</main>
       <Footer />
-      {isShowOverlay && (
+      {isShowButton && (
         <div className="fixed z-50 right-2 md:right-8 bottom-10 md:bottom-10">
           <ButtonScrollUp />
         </div>
