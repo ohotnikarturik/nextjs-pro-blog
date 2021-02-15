@@ -17,7 +17,7 @@ const Footer = () => {
             <Logo footerStyle />
           </div>
         </div>
-        <div className="h-1/4 text-primary-white flex justify-center items-center">
+        <div className="h-1/4 text-center text-primary-white flex justify-center items-center">
           <p>Copyright © 2021 Artur Okhotnichenko</p>
         </div>
       </div>

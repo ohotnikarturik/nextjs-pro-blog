@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { GetStaticProps } from 'next'
 
 import Subtitle from '../components/Subtitle'
 import SocialItems from '../components/SocialItems'
@@ -7,58 +8,30 @@ import Title from '../components/Title'
 import ButtonScroll from '../components/ButtonScroll'
 import Meta from '../components/Meta'
 
-const posts = [
-  {
-    id: 1,
-    title: 'Some Awesome topic',
-    postImg: '/post-img.jpg',
-    textContent:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque.',
-    authorImg: '/profile.png',
-    authorName: 'Artur Okhotnichenko',
-    date: '12 January 2021',
-    badgeColor: 'purple',
-    category: 'Lifestyle',
-  },
-  {
-    id: 2,
-    title: 'Some Awesome topic',
-    postImg: '/post-img.jpg',
-    textContent:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque.,',
-    authorImg: '/profile.png',
-    authorName: 'Artur Okhotnichenko',
-    date: '12 January 2021',
-    badgeColor: 'green',
-    category: 'Technology',
-  },
-  {
-    id: 3,
-    title: 'Some Awesome topic',
-    postImg: '/post-img.jpg',
-    textContent:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque.',
-    authorImg: '/profile.png',
-    authorName: 'Artur Okhotnichenko',
-    date: '12 January 2021',
-    badgeColor: 'blue',
-    category: 'Interviews',
-  },
-  {
-    id: 4,
-    title: 'Some Awesome topic',
-    postImg: '/post-img.jpg',
-    textContent:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque.',
-    authorImg: '/profile.png',
-    authorName: 'Artur Okhotnichenko',
-    date: '12 January 2021',
-    badgeColor: 'gray',
-    category: 'Food',
-  },
-]
+// contentful
+const client = require('contentful').createClient({
+  space: process.env.NEXT_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_CONTENTFULL_ACCESS_TOKEN,
+})
 
-export default function Home() {
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await client.getEntries({
+    content_type: 'post',
+  })
+
+  return {
+    props: {
+      posts: data.items,
+    },
+  }
+}
+interface HomeProps {
+  posts: any
+}
+
+export default function Home({ posts }: HomeProps) {
+  console.log(posts)
+
   return (
     <>
       <Meta
@@ -96,7 +69,7 @@ export default function Home() {
         </div>
       </section>
       <section id="/latest-posts" className="min-h-screen relative">
-        <div className="container pt-40 pb-40 ">
+        <div className="container pt-20 pb-40 ">
           <div className="mb-7">
             <Title label="Latest Posts." />
           </div>

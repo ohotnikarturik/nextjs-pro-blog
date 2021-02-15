@@ -10,7 +10,7 @@ const ButtonToScroll = ({ label, path }: ButtonToScrollProps) => {
       spy={true}
       smooth={true}
       duration={500}
-      offset={100}
+      offset={0}
     >
       {label}
     </LinkScroll>

@@ -34,7 +34,7 @@ const about = () => {
           src="/about-img.jpg"
           alt="Read blog image"
           width={900}
-          height={400}
+          height={420}
           layout="responsive"
           quality={50}
           objectFit="cover"

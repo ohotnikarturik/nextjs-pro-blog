@@ -1,49 +1,48 @@
 import Image from 'next/image'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { BLOCKS } from '@contentful/rich-text-types'
 
 import Meta from '../../components/Meta'
 import Subtitle from '../../components/Subtitle'
 import Title from '../../components/Title'
 import Badge from '../../components/Badge'
 
-const contentList = [
-  {
-    id: 1,
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-  {
-    id: 2,
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-  {
-    id: 3,
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-  {
-    id: 4,
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-  {
-    id: 5,
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-  {
-    id: 6,
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-]
+// contentful
+const client = require('contentful').createClient({
+  space: process.env.NEXT_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_CONTENTFULL_ACCESS_TOKEN,
+})
 
-const post = () => {
+export const getStaticPaths = async () => {
+  const data = await client.getEntries({
+    content_type: 'post',
+  })
+
+  return {
+    paths: data.items.map((post: any) => ({ params: { id: post.sys.id } })),
+    fallback: false,
+  }
+}
+
+export const getStaticProps = async (context: any) => {
+  const data = await client.getEntries({
+    content_type: 'post',
+    'sys.id': context.params.id,
+  })
+
+  return {
+    props: {
+      post: data.items[0],
+    },
+  }
+}
+
+const post = ({ post }: any) => {
   return (
     <>
       <Meta
-        title={`ProBlog App | ${'some post'}`}
-        description={`${'some textContent'}`}
+        title={post.fields.title}
+        description={`${post.fields.excerpt}`}
         keywords="post"
       />
 
@@ -54,50 +53,69 @@ const post = () => {
         <div className="relative">
           <Image
             className="rounded-md overflow-hidden"
-            src="/single-post-img.jpg"
+            src={'https:' + post.fields.postImg.fields.file.url}
             alt="Read blog image"
             width={900}
-            height={400}
+            height={420}
             layout="responsive"
-            quality={50}
+            quality={100}
             objectFit="cover"
           />
           <div className="absolute top-0 left-0 ">
-            <Badge postStyle label="Some" color="red" />
+            <Badge
+              postStyle
+              label={post.fields.category}
+              color={post.fields.badgeColor}
+            />
           </div>
         </div>
         <div className="flex justify-center">
           <div className="flex flex-col w-full sm:w-3/4 md:w-4/5 lg:w-2/3 xl:w-3/5">
             <div className="mt-8 flex justify-between items-center ">
-              <span className="text-xs font-medium">{'12 January 2021'}</span>
+              <span className="text-xs font-medium">{post.fields.date}</span>
               <div className="flex items-center">
                 <Image
-                  className="rounded"
-                  src="/profile.png"
+                  className="rounded-full"
+                  src={'https:' + post.fields.authorImg.fields.file.url}
                   alt="Profile"
                   width={30}
                   height={30}
                   quality={100}
+                  objectFit={'cover'}
                 />
                 <span className="ml-3 font-medium text-sm">
-                  {'Artur Okhotnichenko'}
+                  {post.fields.authorName}
                 </span>
               </div>
             </div>
             <div className="my-8">
-              <Subtitle
-                boldStyle
-                label="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-              />
+              <Subtitle boldStyle label={post.fields.title} />
             </div>
             <div className="w-full flex flex-col items-center">
-              <ul className="">
-                {contentList.map((item) => (
-                  <li key={item.id} className="mb-10">
-                    <p>{item.text}</p>
-                  </li>
-                ))}
-              </ul>
+              <div className="mb-10">
+                <div>
+                  {documentToReactComponents(post.fields.textContent, {
+                    renderNode: {
+                      [BLOCKS.EMBEDDED_ASSET]: (node) => (
+                        <Image
+                          className="rounded-md overflow-hidden"
+                          src={'https:' + node.data.target.fields.file.url}
+                          alt="Read blog image"
+                          width={
+                            node.data.target.fields.file.details.image.width
+                          }
+                          height={
+                            node.data.target.fields.file.details.image.height
+                          }
+                          layout="responsive"
+                          quality={100}
+                          objectFit="cover"
+                        />
+                      ),
+                    },
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>

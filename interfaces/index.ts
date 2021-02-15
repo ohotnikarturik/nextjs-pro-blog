@@ -32,6 +32,7 @@ export interface IPost {
   title: string
   postImg: string
   textContent: string
+  excerpt: string
   authorImg: string
   authorName: string
   date: string
@@ -48,6 +49,7 @@ export interface DropDownMenuProps {
   onClickSetCategory: (value: string) => void
   divRef: any // fix
   category: string
+  posts: any
 }
 export interface HamburgerMenuProps {
   onClick: () => void
@@ -70,6 +72,7 @@ export interface SearchFilterSortPanelProps {
   getSearchInputValue: (value: string) => void
   onClickReversPosts: () => void
   onSelectCategory: (category: string) => void
+  posts: any
 }
 export interface SearchFormProps {
   getSearchInputValue: (value: string) => void

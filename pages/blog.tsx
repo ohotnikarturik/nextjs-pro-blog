@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 
 import Meta from '../components/Meta'
 import Title from '../components/Title'
@@ -9,72 +9,29 @@ import Pagination from '../components/Pagination'
 import { IPost } from '../interfaces'
 import Subtitle from '../components/Subtitle'
 
-const postList = [
-  {
-    id: 1,
-    title: 'Some Awesome topc',
-    postImg: '/post-img.jpg',
-    textContent:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque.',
-    authorImg: '/profile.png',
-    authorName: 'Artur Okhotnichenko',
-    date: '12 January 2021',
-    badgeColor: 'purple',
-    category: 'Lifestyle',
-  },
-  {
-    id: 2,
-    title: 'Some Awesome topic',
-    postImg: '/post-img.jpg',
-    textContent:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque.,',
-    authorImg: '/profile.png',
-    authorName: 'Artur Okhotnichenko',
-    date: '12 January 2021',
-    badgeColor: 'green',
-    category: 'Technology',
-  },
-  {
-    id: 3,
-    title: 'Some Awesome topic',
-    postImg: '/post-img.jpg',
-    textContent:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque.',
-    authorImg: '/profile.png',
-    authorName: 'Artur Okhotnichenko',
-    date: '12 January 2021',
-    badgeColor: 'blue',
-    category: 'Interviews',
-  },
-  {
-    id: 4,
-    title: 'Some Awesome topic',
-    postImg: '/post-img.jpg',
-    textContent:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque.',
-    authorImg: '/profile.png',
-    authorName: 'Artur Okhotnichenko',
-    date: '12 January 2021',
-    badgeColor: 'gray',
-    category: 'Food',
-  },
-  {
-    id: 5,
-    title: 'Hi Top 10',
-    postImg: '/post-img.jpg',
-    textContent:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque.',
-    authorImg: '/profile.png',
-    authorName: 'Artur Okhotnichenko',
-    date: '12 January 2021',
-    badgeColor: 'gray',
-    category: 'Food',
-  },
-]
+// contentful
+const client = require('contentful').createClient({
+  space: process.env.NEXT_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_CONTENTFULL_ACCESS_TOKEN,
+})
 
-const blog = ({ articles }: any) => {
-  console.log(articles)
+export const getStaticProps: GetStaticProps = async () => {
+  const data = await client.getEntries({
+    content_type: 'post',
+  })
 
+  return {
+    props: {
+      listPosts: data.items,
+    },
+  }
+}
+
+interface BlogProps {
+  listPosts: any
+}
+
+const blog = ({ listPosts }: any) => {
   const [searchFormValue, setSearchFormValue] = useState('')
   const [posts, setPosts] = useState<Array<IPost>>([])
 
@@ -89,10 +46,10 @@ const blog = ({ articles }: any) => {
 
   const onSelectCategory = (category: string) => {
     if (category === 'All Categories') {
-      setPosts(postList)
+      setPosts(listPosts)
     } else {
-      const filteredCategory = postList.filter(
-        (item) => item.category === category
+      const filteredCategory = listPosts.filter(
+        (item: any) => item.fields.category === category
       )
 
       setPosts(filteredCategory)
@@ -100,8 +57,10 @@ const blog = ({ articles }: any) => {
   }
 
   useEffect(() => {
-    const filteredPosts = postList.filter((post) =>
-      post.title.toLowerCase().includes(searchFormValue.toLocaleLowerCase())
+    const filteredPosts = listPosts.filter((post: any) =>
+      post.fields.title
+        .toLowerCase()
+        .includes(searchFormValue.toLocaleLowerCase())
     )
 
     setPosts(filteredPosts)
@@ -121,19 +80,22 @@ const blog = ({ articles }: any) => {
         <div className="z-20 mb-14 bg-primary-white opacity-95">
           <div className="container relative">
             <SearchFilterSortPanel
+              posts={posts}
               getSearchInputValue={getSearchInputValue}
               onClickReversPosts={onClickReversPosts}
               onSelectCategory={onSelectCategory}
             />
           </div>
         </div>
-        <div className="container flex items-center justify-center pb-40">
+        <div className="container w-full pb-40">
           {!posts.length ? (
-            <Subtitle
-              boldStyle
-              color="purple"
-              label="No matches found. Try again!"
-            />
+            <div className="w-full flex justify-center">
+              <Subtitle
+                boldStyle
+                color="purple"
+                label="No matches found. Try again!"
+              />
+            </div>
           ) : (
             <PostCardList posts={posts} />
           )}
@@ -147,18 +109,3 @@ const blog = ({ articles }: any) => {
 }
 
 export default blog
-
-// interface Props {
-//   articles: any
-// }
-
-// export const getStaticProps: GetStaticProps = async () => {
-//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
-//   const articles = await res.json()
-
-//   return {
-//     props: {
-//       articles,
-//     },
-//   }
-// }
