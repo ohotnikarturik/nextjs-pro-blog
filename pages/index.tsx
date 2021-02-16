@@ -17,12 +17,12 @@ const client = require('contentful').createClient({
 export const getStaticProps: GetStaticProps = async () => {
   const data = await client.getEntries({
     content_type: 'post',
-    revalidate: 1,
   })
 
   return {
     props: {
       posts: data.items,
+      revalidate: 1,
     },
   }
 }
@@ -31,8 +31,6 @@ interface HomeProps {
 }
 
 export default function Home({ posts }: HomeProps) {
-  console.log(posts)
-
   return (
     <>
       <Meta
