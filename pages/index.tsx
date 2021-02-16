@@ -22,8 +22,8 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       posts: data.items,
-      revalidate: 1,
     },
+    revalidate: 1,
   }
 }
 interface HomeProps {
