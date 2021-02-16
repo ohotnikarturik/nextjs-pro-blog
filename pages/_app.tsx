@@ -1,4 +1,3 @@
-import '../styles/globals.css'
 import 'tailwindcss/tailwind.css'
 import type { AppProps } from 'next/app'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -11,6 +10,7 @@ import {
 import { faChevronDown, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from '../components/Layout'
+import '../styles/globals.css'
 
 library.add(
   faFacebookSquare,
