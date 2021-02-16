@@ -7,6 +7,7 @@ import Subtitle from '../../components/Subtitle'
 import Title from '../../components/Title'
 import Badge from '../../components/Badge'
 import NotFoundPost404 from '../../components/NotFoudPost404'
+import ButtonBack from '../../components/ButtonBack'
 
 // contentful
 const client = require('contentful').createClient({
@@ -56,13 +57,16 @@ const post = ({ post }: any) => {
         <div className="mb-7 mt-14">
           <Title label="Post." />
         </div>
+        <div className="my-7">
+          <ButtonBack />
+        </div>
         <div className="relative shadow-md">
           <Image
             className="rounded-md overflow-hidden"
             src={'https:' + post.fields.postImg.fields.file.url}
             alt="Read blog image"
-            width={900}
-            height={420}
+            width={post.fields.postImg.fields.file.details.image.width}
+            height={post.fields.postImg.fields.file.details.image.height}
             layout="responsive"
             quality={100}
             objectFit="cover"
