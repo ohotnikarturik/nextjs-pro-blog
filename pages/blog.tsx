@@ -5,9 +5,8 @@ import Meta from '../components/Meta'
 import Title from '../components/Title'
 import SearchFilterSortPanel from '../components/SearchFilterSortPanel'
 import PostCardList from '../components/PostCardList'
-import Pagination from '../components/Pagination'
 import { IPost } from '../interfaces'
-import Subtitle from '../components/Subtitle'
+import Loader from '../components/Loader'
 
 // contentful
 const client = require('contentful').createClient({
@@ -26,7 +25,6 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   }
 }
-
 interface BlogProps {
   listPosts: any
 }
@@ -34,6 +32,16 @@ interface BlogProps {
 const blog = ({ listPosts }: any) => {
   const [searchFormValue, setSearchFormValue] = useState('')
   const [posts, setPosts] = useState<Array<IPost>>([])
+
+  useEffect(() => {
+    const filteredPosts = listPosts.filter((post: any) =>
+      post.fields.title
+        .toLowerCase()
+        .includes(searchFormValue.toLocaleLowerCase())
+    )
+
+    setPosts(filteredPosts)
+  }, [searchFormValue])
 
   const getSearchInputValue = (value: string) => {
     setSearchFormValue(value)
@@ -56,16 +64,6 @@ const blog = ({ listPosts }: any) => {
     }
   }
 
-  useEffect(() => {
-    const filteredPosts = listPosts.filter((post: any) =>
-      post.fields.title
-        .toLowerCase()
-        .includes(searchFormValue.toLocaleLowerCase())
-    )
-
-    setPosts(filteredPosts)
-  }, [searchFormValue])
-
   return (
     <>
       <Meta
@@ -73,7 +71,7 @@ const blog = ({ listPosts }: any) => {
         description="Blog page"
         keywords="blog, post, posts"
       />
-      <section className="flex flex-col justify-start">
+      <section className="flex pb-10 flex-col justify-start">
         <div className="container mt-14 mb-7">
           <Title label="Blog." />
         </div>
@@ -87,21 +85,14 @@ const blog = ({ listPosts }: any) => {
             />
           </div>
         </div>
-        <div className="container w-full pb-40">
-          {!posts.length ? (
+        <div className="container w-full">
+          {!posts ? (
             <div className="w-full flex justify-center">
-              <Subtitle
-                boldStyle
-                color="purple"
-                label="No matches found. Try again!"
-              />
+              <Loader />
             </div>
           ) : (
             <PostCardList posts={posts} />
           )}
-        </div>
-        <div className="container mb-20 flex justify-center mt-auto">
-          <Pagination />
         </div>
       </section>
     </>

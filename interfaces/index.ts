@@ -63,7 +63,6 @@ export interface NavBarProps {
 export interface OverlayMenuProps {
   onClick: () => void
 }
-
 export interface ReverseListItemProps {
   onClickReversPosts: () => void
 }
@@ -82,4 +81,10 @@ export interface SocialItemsProps {
 export interface ButtonToScrollProps {
   label: string
   path: string
+}
+export interface PaginationProps {
+  postPerPage: number
+  totalPosts: number
+  paginate: (number: number) => void
+  currentPage: number
 }

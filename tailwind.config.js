@@ -34,22 +34,8 @@ module.exports = {
       },
     },
   },
-
   variants: {
     extend: {},
   },
   plugins: [],
-  safelist: [
-    'bg-primary-red',
-    'bg-primary-black',
-    'bg-primary-white',
-    'bg-primary-gray',
-    'bg-primary-pink',
-    'bg-primary-purple',
-    'bg-primary-crimson',
-    'bg-primary-silver',
-    'bg-primary-green',
-    'bg-primary-blue',
-    'bg-primary-orange',
-  ],
 }
