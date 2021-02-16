@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import Badge from './Badge'
 import Button from './Button'
@@ -10,7 +9,7 @@ const PostCardItem = ({ post }: any) => {
   return (
     <>
       <div className=" bg-primary-white overflow-hidden rounded-md">
-        <div className="h-1/2 relative">
+        <div className="h-1/2 relative shadow-sm">
           <Image
             src={'https:' + post.fields.postImg.fields.file.url}
             layout="responsive"
@@ -36,7 +35,7 @@ const PostCardItem = ({ post }: any) => {
               <span>{post.fields.excerpt}</span>
             </div>
           </div>
-          <div className="flex flex-col s:flex-row items-center justify-between pt-4">
+          <div className="flex items-center justify-between pt-4">
             <div className="flex items-center mb-2 s:mb-0">
               <Image
                 className=" rounded-full"

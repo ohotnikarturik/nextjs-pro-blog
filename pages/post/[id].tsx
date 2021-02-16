@@ -6,6 +6,7 @@ import Meta from '../../components/Meta'
 import Subtitle from '../../components/Subtitle'
 import Title from '../../components/Title'
 import Badge from '../../components/Badge'
+import NotFoundPost404 from '../../components/NotFoudPost404'
 
 // contentful
 const client = require('contentful').createClient({
@@ -20,7 +21,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths: data.items.map((post: any) => ({ params: { id: post.sys.id } })),
-    fallback: false,
+    fallback: true,
   }
 }
 
@@ -33,11 +34,16 @@ export const getStaticProps = async (context: any) => {
   return {
     props: {
       post: data.items[0],
+      revalidate: 1,
     },
   }
 }
 
 const post = ({ post }: any) => {
+  if (!post) {
+    return <NotFoundPost404 />
+  }
+
   return (
     <>
       <Meta
@@ -50,7 +56,7 @@ const post = ({ post }: any) => {
         <div className="mb-7 mt-14">
           <Title label="Post." />
         </div>
-        <div className="relative">
+        <div className="relative shadow-md">
           <Image
             className="rounded-md overflow-hidden"
             src={'https:' + post.fields.postImg.fields.file.url}
@@ -75,7 +81,7 @@ const post = ({ post }: any) => {
               <span className="text-xs font-medium">{post.fields.date}</span>
               <div className="flex items-center">
                 <Image
-                  className="rounded-full"
+                  className="rounded-full shadow"
                   src={'https:' + post.fields.authorImg.fields.file.url}
                   alt="Profile"
                   width={30}

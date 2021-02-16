@@ -29,16 +29,19 @@ const about = () => {
         <div className="mb-7 mt-14">
           <Title label="About." />
         </div>
-        <Image
-          className="rounded-md overflow-hidden"
-          src="/about-img.jpg"
-          alt="Read blog image"
-          width={900}
-          height={420}
-          layout="responsive"
-          quality={50}
-          objectFit="cover"
-        />
+        <div className="shadow-md rounded-md overflow-hidden">
+          <Image
+            className=""
+            src="/about-img.jpg"
+            alt="Read blog image"
+            width={900}
+            height={420}
+            layout="responsive"
+            quality={50}
+            objectFit="cover"
+          />
+        </div>
+
         <div className="flex justify-center">
           <div className="w-full sm:w-3/4 md:w-4/5 lg:w-2/3 xl:w-3/5">
             <div className="my-8">

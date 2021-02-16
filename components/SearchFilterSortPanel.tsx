@@ -11,7 +11,7 @@ const SearchFilterSortPanel = ({
   onClickReversPosts,
   onSelectCategory,
 }: SearchFilterSortPanelProps) => {
-  const divRef = React.useRef<HTMLElement | null>(null)
+  // const divRef = React.useRef<HTMLElement | null>(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [category, setCategory] = useState('All Categories')
 
@@ -58,7 +58,7 @@ const SearchFilterSortPanel = ({
       <div className="left-8 top-28 md:top-16 mt-3 absolute">
         {isMenuOpen && (
           <DropDownMenu
-            divRef={divRef}
+            // divRef={divRef}
             onClickSetCategory={onClickSetCategory}
             category={category}
           />

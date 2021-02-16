@@ -1,16 +1,16 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import Meta from '../components/Meta'
+import Meta from './Meta'
 
-const notFoundPage404 = () => {
+const NotFoundPost404 = () => {
   const router = useRouter()
 
   return (
     <>
       <Meta
-        title="ProBlog App | 404 not found page"
-        description="Not found page"
+        title="ProBlog App | 404 not found post"
+        description="Not found post"
         keywords="404"
       />
       <div className="flex flex-col justify-start items-center">
@@ -18,7 +18,7 @@ const notFoundPage404 = () => {
           404
         </h2>
         <span className="font-medium text-primary-black mt-6">
-          This page could not be found. Go{' '}
+          Post could not be found. Go{' '}
           <button
             className="focus:outline-none hover:text-primary-crimson hover:border-primary-crimson transition ease-in duration-200"
             onClick={() => router.back()}
@@ -39,4 +39,4 @@ const notFoundPage404 = () => {
   )
 }
 
-export default notFoundPage404
+export default NotFoundPost404

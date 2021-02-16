@@ -17,6 +17,7 @@ const client = require('contentful').createClient({
 export const getStaticProps: GetStaticProps = async () => {
   const data = await client.getEntries({
     content_type: 'post',
+    revalidate: 1,
   })
 
   return {

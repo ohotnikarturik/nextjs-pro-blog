@@ -47,7 +47,7 @@ export interface PostCardItemProps {
 }
 export interface DropDownMenuProps {
   onClickSetCategory: (value: string) => void
-  divRef: any // fix
+  divRef?: any // fix
   category: string
 }
 export interface HamburgerMenuProps {
