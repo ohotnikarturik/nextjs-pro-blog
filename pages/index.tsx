@@ -55,7 +55,7 @@ export default function Home({ posts }: HomeProps) {
           </div>
           <div className="absolute z-10 top-1/5 right-0 invisible lg:visible">
             <Image
-              src="/home-img.svg"
+              src="/images/home-img.svg"
               alt="Read blog image"
               width={600}
               height={600}

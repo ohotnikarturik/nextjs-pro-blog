@@ -75,7 +75,6 @@ const blog = ({ listPosts }: BlogProps) => {
         <div className="z-20 mb-14 bg-primary-white opacity-95">
           <div className="container relative">
             <SearchFilterSortPanel
-              posts={posts}
               getSearchInputValue={getSearchInputValue}
               onClickReversPosts={onClickReversPosts}
               onSelectCategory={onSelectCategory}

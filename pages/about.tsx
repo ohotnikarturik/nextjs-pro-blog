@@ -32,7 +32,7 @@ const about = () => {
         <div className="shadow-md rounded-md overflow-hidden">
           <Image
             className=""
-            src="/about-img.jpg"
+            src="/images/about-img.jpg"
             alt="Read blog image"
             width={900}
             height={420}
