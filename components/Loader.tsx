@@ -1,7 +1,7 @@
-const Loader = () => {
-  return (
-    <span className="text-2xl font-bold text-primary-purple">Loading...</span>
-  )
+import { LoaderProps } from '../interfaces/'
+
+const Loader = ({ label }: LoaderProps) => {
+  return <span className="text-xl font-bold text-primary-purple">{label}</span>
 }
 
 export default Loader

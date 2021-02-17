@@ -8,7 +8,7 @@ import Pagination from './Pagination'
 const CardList = ({ posts }: any) => {
   const router = useRouter()
   const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage] = useState(1)
+  const [postsPerPage] = useState(6)
 
   // get current posts
   const indexOfLastPost = currentPage * postsPerPage
@@ -22,7 +22,7 @@ const CardList = ({ posts }: any) => {
     <>
       <ul className="grid lg:grid-cols-3 gap-x-10 gap-y-28 md:grid-cols-2">
         {router.pathname === '/'
-          ? posts.slice(0, 6).map((post: any) => (
+          ? currentPosts.map((post: any) => (
               <li
                 className="relative rounded-md shadow-lg hover:shadow-2xl cursor-pointer transition ease-in duration-200"
                 key={post.sys.id}

@@ -32,16 +32,11 @@ const NavBar = ({ footerStyle, overlayStyle }: NavBarProps) => {
                       ? 'text-primary-pink'
                       : 'border-primary-crimson text-primary-crimson'
                   }`
-                }
-                } border-b-2 font-leckerli border-transparent text-primary-${
-                  footerStyle ? 'white' : 'red'
-                } font-${footerStyle ? 'light' : 'medium'} text-${
-                  footerStyle ? 'lg' : 'xl'
-                } hover:text-primary-${footerStyle ? 'pink' : 'crimson'} ${
-                  footerStyle ? null : 'hover:border-primary-crimson'
-                } hover:border-b-2 transition ease-in duration-200 ${
-                  overlayStyle && 'text-3xl font-bold font-leckerli'
-                }`}
+                } border-b-2 font-leckerli border-transparent hover:border-b-2 transition ease-in duration-200 ${
+                  footerStyle
+                    ? 'text-primary-white font-light text-lg hover:text-primary-pink'
+                    : 'text-primary-red font-medium text-xl hover:text-primary-crimson hover:border-primary-crimson'
+                } ${overlayStyle && 'text-3xl font-bold font-leckerli'}`}
               >
                 {item.label}
               </a>

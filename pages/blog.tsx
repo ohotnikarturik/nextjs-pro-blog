@@ -88,7 +88,7 @@ const blog = ({ listPosts }: any) => {
         <div className="container w-full">
           {!posts ? (
             <div className="w-full flex justify-center">
-              <Loader />
+              <Loader label="Loading..." />
             </div>
           ) : (
             <PostCardList posts={posts} />

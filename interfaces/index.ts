@@ -88,3 +88,6 @@ export interface PaginationProps {
   paginate: (number: number) => void
   currentPage: number
 }
+export interface LoaderProps {
+  label: string
+}

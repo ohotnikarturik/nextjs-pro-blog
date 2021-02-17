@@ -75,7 +75,7 @@ export default function Home({ posts }: HomeProps) {
           </div>
           {!posts ? (
             <div className="w-full flex mt-32 justify-center">
-              <Loader />
+              <Loader label="Loading..." />
             </div>
           ) : (
             <PostCardList posts={posts} />

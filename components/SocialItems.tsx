@@ -25,10 +25,10 @@ const SocialItems = ({ footerStyle }: SocialItemsProps) => {
     <ul className="flex">
       {socialIcons.map((item) => (
         <li
-          className={`transform hover:scale-105 motion-reduce:transform-none text-primary-${
-            footerStyle ? 'white' : 'red'
-          } hover:text-primary-${
-            footerStyle ? 'red' : 'crimson'
+          className={`transform hover:scale-105 motion-reduce:transform-none ${
+            footerStyle
+              ? 'text-primary-white hover:text-primary-red'
+              : 'text-primary-red hover:text-primary-crimson'
           } mx-2 md:mx-0 md:mr-4 transition ease-in duration-200 cursor-pointer`}
           key={item.id}
         >

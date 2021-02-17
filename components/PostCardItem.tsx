@@ -8,7 +8,7 @@ import { PostCardItemProps } from '../interfaces'
 
 const PostCardItem = ({ post }: any) => {
   return (
-    <Link href="post/[id]" as={`post/${post.sys.id}`}>
+    <Link href="/post/[id]" as={`/post/${post.sys.id}`}>
       <a>
         <div className=" bg-primary-white overflow-hidden rounded-md">
           <div className="h-1/2 relative shadow-sm">
@@ -61,8 +61,8 @@ const PostCardItem = ({ post }: any) => {
         <div className="absolute right-3 -bottom-5">
           <Button
             label="Read more"
-            path="post/[id]"
-            as={`post/${post.sys.id}`}
+            path="/post/[id]"
+            as={`/post/${post.sys.id}`}
           />
         </div>
       </a>
