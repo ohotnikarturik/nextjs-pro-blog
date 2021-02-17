@@ -8,6 +8,7 @@ import Title from '../components/Title'
 import ButtonScroll from '../components/ButtonScroll'
 import Meta from '../components/Meta'
 import Loader from '../components/Loader'
+import { HomeProps } from '../interfaces/'
 
 // contentful
 const client = require('contentful').createClient({
@@ -26,9 +27,6 @@ export const getStaticProps: GetStaticProps = async () => {
     },
     revalidate: 1,
   }
-}
-interface HomeProps {
-  posts: any
 }
 
 export default function Home({ posts }: HomeProps) {

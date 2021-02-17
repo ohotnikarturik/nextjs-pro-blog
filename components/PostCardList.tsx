@@ -5,7 +5,7 @@ import { CardListProps } from '../interfaces'
 import PostCardItem from './PostCardItem'
 import Pagination from './Pagination'
 
-const CardList = ({ posts }: any) => {
+const CardList = ({ posts }: CardListProps) => {
   const router = useRouter()
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(6)
@@ -22,7 +22,7 @@ const CardList = ({ posts }: any) => {
     <>
       <ul className="grid lg:grid-cols-3 gap-x-10 gap-y-28 md:grid-cols-2">
         {router.pathname === '/'
-          ? currentPosts.map((post: any) => (
+          ? currentPosts.map((post) => (
               <li
                 className="relative rounded-md shadow-lg hover:shadow-2xl cursor-pointer transition ease-in duration-200"
                 key={post.sys.id}
@@ -30,7 +30,7 @@ const CardList = ({ posts }: any) => {
                 <PostCardItem post={post} />
               </li>
             ))
-          : currentPosts.map((post: any) => (
+          : currentPosts.map((post) => (
               <li
                 className="relative rounded-md shadow-lg hover:shadow-2xl cursor-pointer transition ease-in duration-200"
                 key={post.sys.id}

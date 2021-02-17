@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Formik } from 'formik'
+import { Formik, FormikHelpers } from 'formik'
 import { object, string } from 'yup'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -11,6 +11,7 @@ import {
 import fire from '../firebase-config'
 import Subtitle from './Subtitle'
 import Loader from './Loader'
+import { IFormValues } from '../interfaces/'
 
 const formInitValues = {
   name: '',
@@ -67,8 +68,10 @@ const FormContact = () => {
     }, 5000)
   }
 
-  // fix types
-  const onSubmitForm = async (values: any, submitProps: any) => {
+  const onSubmitForm = async (
+    values: IFormValues,
+    submitProps: FormikHelpers<IFormValues>
+  ) => {
     try {
       setIsLoader(true)
       await fire.collection('contacts').add({ ...values })

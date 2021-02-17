@@ -8,6 +8,7 @@ import Title from '../../components/Title'
 import Badge from '../../components/Badge'
 import NotFoundPost404 from '../../components/NotFoudPost404'
 import ButtonBack from '../../components/ButtonBack'
+import { PostProps, IObjectPost, Params } from '../../interfaces/'
 
 // contentful
 const client = require('contentful').createClient({
@@ -21,15 +22,17 @@ export const getStaticPaths = async () => {
   })
 
   return {
-    paths: data.items.map((post: any) => ({ params: { id: post.sys.id } })),
+    paths: data.items.map((post: IObjectPost) => ({
+      params: { id: post.sys.id },
+    })),
     fallback: true,
   }
 }
 
-export const getStaticProps = async (context: any) => {
+export const getStaticProps = async ({ params }: Params) => {
   const data = await client.getEntries({
     content_type: 'post',
-    'sys.id': context.params.id,
+    'sys.id': params.id,
   })
 
   return {
@@ -40,7 +43,7 @@ export const getStaticProps = async (context: any) => {
   }
 }
 
-const post = ({ post }: any) => {
+const post = ({ post }: PostProps) => {
   if (!post) {
     return <NotFoundPost404 />
   }

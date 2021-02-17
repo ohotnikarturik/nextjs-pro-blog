@@ -6,7 +6,7 @@ import Button from './Button'
 import Subtitle from './Subtitle'
 import { PostCardItemProps } from '../interfaces'
 
-const PostCardItem = ({ post }: any) => {
+const PostCardItem = ({ post }: PostCardItemProps) => {
   return (
     <Link href="/post/[id]" as={`/post/${post.sys.id}`}>
       <a>

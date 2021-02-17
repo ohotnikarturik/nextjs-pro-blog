@@ -5,7 +5,7 @@ import Meta from '../components/Meta'
 import Title from '../components/Title'
 import SearchFilterSortPanel from '../components/SearchFilterSortPanel'
 import PostCardList from '../components/PostCardList'
-import { IPost } from '../interfaces'
+import { BlogProps, IObjectPost } from '../interfaces'
 import Loader from '../components/Loader'
 
 // contentful
@@ -25,16 +25,13 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   }
 }
-interface BlogProps {
-  listPosts: any
-}
 
-const blog = ({ listPosts }: any) => {
+const blog = ({ listPosts }: BlogProps) => {
   const [searchFormValue, setSearchFormValue] = useState('')
-  const [posts, setPosts] = useState<Array<IPost>>([])
+  const [posts, setPosts] = useState<Array<IObjectPost>>([])
 
   useEffect(() => {
-    const filteredPosts = listPosts.filter((post: any) =>
+    const filteredPosts = listPosts.filter((post: IObjectPost) =>
       post.fields.title
         .toLowerCase()
         .includes(searchFormValue.toLocaleLowerCase())
@@ -57,7 +54,7 @@ const blog = ({ listPosts }: any) => {
       setPosts(listPosts)
     } else {
       const filteredCategory = listPosts.filter(
-        (item: any) => item.fields.category === category
+        (item: IObjectPost) => item.fields.category === category
       )
 
       setPosts(filteredCategory)

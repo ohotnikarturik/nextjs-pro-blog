@@ -1,3 +1,10 @@
+import { Document } from '@contentful/rich-text-types'
+
+export type Params = {
+  params: {
+    id: string
+  }
+}
 export interface MetaProps {
   title: string
   keywords?: string
@@ -27,23 +34,70 @@ export interface BadgeProps {
   color: string
   postStyle?: boolean
 }
+export interface BlogProps {
+  listPosts: [
+    {
+      sys: { id: string }
+      fields: IPost
+    }
+  ]
+}
+export interface HomeProps {
+  posts: [
+    {
+      sys: { id: string }
+      fields: IPost
+    }
+  ]
+}
+export interface PostProps {
+  post: {
+    sys: { id: string }
+    fields: IPost
+  }
+}
+export interface IObjectPost {
+  sys: { id: string }
+  fields: IPost
+}
 export interface IPost {
-  id: number
+  id: string
   title: string
-  postImg: string
-  textContent: string
+  postImg: IPostImg
+  textContent: Document
   excerpt: string
-  authorImg: string
+  authorImg: IAuthorImg
   authorName: string
   date: string
   badgeColor: string
   category: string
 }
+
+export interface IPostImg {
+  fields: {
+    file: {
+      url: string
+      details: {
+        image: {
+          width: number
+          height: number
+        }
+      }
+    }
+  }
+}
+export interface IAuthorImg {
+  fields: {
+    file: {
+      url: string
+    }
+  }
+}
 export interface CardListProps {
-  posts: IPost[]
+  posts: IObjectPost[]
 }
 export interface PostCardItemProps {
-  post: IPost
+  post: IObjectPost
 }
 export interface DropDownMenuProps {
   onClickSetCategory: (value: string) => void
@@ -70,7 +124,6 @@ export interface SearchFilterSortPanelProps {
   getSearchInputValue: (value: string) => void
   onClickReversPosts: () => void
   onSelectCategory: (category: string) => void
-  posts: any
 }
 export interface SearchFormProps {
   getSearchInputValue: (value: string) => void
@@ -91,3 +144,11 @@ export interface PaginationProps {
 export interface LoaderProps {
   label: string
 }
+export interface IFormValues {
+  name: string
+  email: string
+  subject: string
+  message: string
+}
+
+
