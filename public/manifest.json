@@ -1,7 +1,7 @@
 {
   "name": "Pro Blog App",
   "short_name": "proBlog",
-  "theme_color": "#F67280",
+  "theme_color": "#152135",
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
