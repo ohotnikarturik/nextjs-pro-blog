@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import ButtonBack from '../components/ButtonBack'
 
 import Meta from '../components/Meta'
 import Subtitle from '../components/Subtitle'
@@ -28,6 +29,9 @@ const about = () => {
       <section className="container min-h-screen flex flex-col pb-40">
         <div className="mb-7 mt-14">
           <Title label="About." />
+        </div>
+        <div className="my-7">
+          <ButtonBack />
         </div>
         <div className="shadow-md rounded-md overflow-hidden">
           <Image

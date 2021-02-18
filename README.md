@@ -1,36 +1,42 @@
-[![pas](https://img.shields.io/static/v1?&message=ProgressiveApp.Store&color=74b9ff&style=flat&label=Follow%20ProBlog%20at)](https://progressiveapp.store/pwa/ProBlog)
+# ProBlog Web Application
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p>
+    <img src="https://img.shields.io/badge/Progressive Web App -PWA-purple?style=flat">
+    <img src="https://img.shields.io/badge/language-TypeScript-blue?style=flat&logo=typescript">
+    <img src="https://img.shields.io/badge/CMS-Contentful-yellow?style=flat&logo=contentful">
+    <img src="https://img.shields.io/badge/library-Next.js-black?style=flat&logo=next.js">
+    <img src="https://img.shields.io/badge/deploy-Vercel-black?style=flat&logo=vercel">
+    <img src="https://img.shields.io/badge/cloud storage -Firebase-orange?style=flat&logo=firebase">
+    <img src="https://img.shields.io/badge/styling-Tailwind CSS-teal?style=flat&logo=tailwind css">
+    
+</p>
+<img src="https://img.shields.io/badge/made--by-Artur Okhotnichenko-crimson?style=flat">
 
-## Getting Started
+##### Live Demo on Vercel : https://nextjs-pro-blog.vercel.app/
 
-First, run the development server:
+**_ProBlog is Progressive Web Application, Where you can find and read posts on the most popular topics. Home page has Latest Post section. On Blog page you can chosoe/sort Categories, search form where you can find post by name of title and reverse list of posts Pagination to switch between post's list. About page, you can read about ProBlog app. Contact form, by which you can send message to vevelopment team. ProBlog has Managing data from Contentful CMS. ProBlog app fully responsive and awesome feature that app can work ofline and installed to desktop._**
 
-```bash
-npm run dev
-# or
-yarn dev
+### Usage
+
+- Clone repo
+- Install dependencies: `yarn add`
+- Create account on Contentful. Create specific model and fill content. Add Api key to `.env.local` file.
+- Create account on Firebase and create project with Cloud Firestore. Add Api key to `.env.local` file.
+- Setup environment variables key, in root project create `.env.local` example below:
+
+```
+  // Contentful keys
+  NEXT_CONTENTFUL_SPACE_ID=YOUR_NEXT_CONTENTFUL_SPACE_ID
+  NEXT_CONTENTFULL_ACCESS_TOKEN=YOUR_NNEXT_CONTENTFULL_ACCESS_TOKEN
+
+  // Firebase keys
+  NEXT_PUBLIC_FIREBASE_API_KEY=YOUR_NNEXT_PUBLIC_FIREBASE_API_KEY
+  NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=YOUR_NNEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+  NEXT_PUBLIC_FIREBASE_PROJECT_ID=YOUR_NNEXT_PUBLIC_FIREBASE_PROJECT_ID
+  NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=YOUR_NNEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+  NEXT_PUBLIC_FIREBASE_SENDER_ID=YOUR_NNEXT_PUBLIC_FIREBASE_SENDER_ID
+  NEXT_PUBLIC_FIREBASE_APP_ID=YOUR_NNEXT_PUBLIC_FIREBASE_APP_ID
+  NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=YOUR_NNEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## MORE DESCRIPTION: LATER 🙃.
