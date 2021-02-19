@@ -2,19 +2,19 @@
 
 <p>
     <img src="https://img.shields.io/badge/Progressive Web App -PWA-purple?style=flat">
-    <img src="https://img.shields.io/badge/language-TypeScript-blue?style=flat&logo=typescript">
+    <img src="https://img.shields.io/badge/Language-TypeScript-blue?style=flat&logo=typescript">
     <img src="https://img.shields.io/badge/CMS-Contentful-yellow?style=flat&logo=contentful">
-    <img src="https://img.shields.io/badge/library-Next.js-black?style=flat&logo=next.js">
-    <img src="https://img.shields.io/badge/deploy-Vercel-black?style=flat&logo=vercel">
-    <img src="https://img.shields.io/badge/cloud storage -Firebase-orange?style=flat&logo=firebase">
-    <img src="https://img.shields.io/badge/styling-Tailwind CSS-teal?style=flat&logo=tailwind css">
+    <img src="https://img.shields.io/badge/Library-Next.js-black?style=flat&logo=next.js">
+    <img src="https://img.shields.io/badge/Deploy-Vercel-black?style=flat&logo=vercel">
+    <img src="https://img.shields.io/badge/Cloud storage-Firebase-orange?style=flat&logo=firebase">
+    <img src="https://img.shields.io/badge/Styling-TailwindCSS-teal?style=flat&logo=tailwindcss">
     
 </p>
 <img src="https://img.shields.io/badge/made--by-Artur Okhotnichenko-crimson?style=flat">
 
-##### Live Demo on Vercel : https://nextjs-pro-blog.vercel.app/
+#### Live Demo on Vercel : https://nextjs-pro-blog.vercel.app/
 
-**_ProBlog is Progressive Web Application, Where you can find and read posts on the most popular topics. Home page has Latest Post section. On Blog page you can chosoe/sort Categories, search form where you can find post by name of title and reverse list of posts Pagination to switch between post's list. About page, you can read about ProBlog app. Contact form, by which you can send message to vevelopment team. ProBlog has Managing data from Contentful CMS. ProBlog app fully responsive and awesome feature that app can work ofline and installed to desktop._**
+**_ProBlog is Progressive Web Application, where you can find and read posts on the most popular topics. Home page has Latest Post section. On Blog page you can chosoe/sort Categories, search form where you can find post by name of title and reverse list of posts Pagination to switch between post's list. About page, you can read about ProBlog app. Contact form, by which you can send message to vevelopment team. ProBlog has Managing data from Contentful CMS. ProBlog app fully responsive and awesome feature that app can work ofline and installed to desktop._**
 
 ### Usage
 

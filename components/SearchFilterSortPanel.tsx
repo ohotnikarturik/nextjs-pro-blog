@@ -49,7 +49,7 @@ const SearchFilterSortPanel = ({
           isMenuOpen={isMenuOpen}
         />
       </div>
-      <div className="w-full md:flex-1 order-first md:order-none flex items-center justify-start md:justify-center">
+      <div className="w-full mb-3 md:mb-0 md:flex-1 order-first md:order-none flex items-center justify-start md:justify-center">
         <SearchForm getSearchInputValue={getSearchInputValue} />
       </div>
       <div className="w-full md:flex-1 flex items-center justify-end">

@@ -7,6 +7,7 @@ import SearchFilterSortPanel from '../components/SearchFilterSortPanel'
 import PostCardList from '../components/PostCardList'
 import { BlogProps, IObjectPost } from '../interfaces'
 import Loader from '../components/Loader'
+import ButtonBack from '../components/ButtonBack'
 
 // contentful
 const client = require('contentful').createClient({
@@ -68,11 +69,14 @@ const blog = ({ listPosts }: BlogProps) => {
         description="Blog page"
         keywords="blog, post, posts"
       />
-      <section className="flex pb-10 flex-col justify-start">
-        <div className="container mt-14 mb-7">
+      <section className="container flex pb-10 flex-col justify-start">
+        <div className="mt-7 md:hidden">
+          <ButtonBack />
+        </div>
+        <div className="mb-16  text-center md:hidden">
           <Title label="Blog." />
         </div>
-        <div className="z-20 mb-14 bg-primary-white opacity-95">
+        <div className="z-20 md:mt-16 mb-14 bg-primary-white opacity-95">
           <div className="container relative">
             <SearchFilterSortPanel
               getSearchInputValue={getSearchInputValue}

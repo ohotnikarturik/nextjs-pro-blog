@@ -58,7 +58,7 @@ const PostCardItem = ({ post }: PostCardItemProps) => {
             </div>
           </div>
         </div>
-        <div className="absolute right-3 -bottom-5">
+        <div className="absolute right-1/2  transform translate-x-1/2 sm:right-3 sm:transform-none sm:translate-x-0 -bottom-5">
           <Button
             label="Read more"
             path="/post/[id]"

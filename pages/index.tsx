@@ -38,8 +38,8 @@ export default function Home({ posts }: HomeProps) {
         keywords="latest posts"
       />
       <section className="h-screen">
-        <div className="container h-full flex flex-col justify-evenly relative">
-          <div className="w-full">
+        <div className="container h-full flex flex-col justify-center sm:justify-evenly relative">
+          <div className="w-full -mt-20 mb-20 sm:mb-0">
             <div className="flex flex-col w-4/5 m-auto sm:w-1/2 md:w-full md:m-0 items-center md:items-start z-20">
               <h1 className="text-primary-black text-center md:text-left font-bold text-4xl mb-3">
                 Welcome to <span className="text-primary-black">Pro</span>
@@ -67,8 +67,8 @@ export default function Home({ posts }: HomeProps) {
         </div>
       </section>
       <section id="/latest-posts" className="min-h-screen relative">
-        <div className="container pt-20 pb-40 ">
-          <div className="mb-7">
+        <div className="container pt-0 md:pt-20 pb-40 ">
+          <div className="mb-7 text-center sm:text-left">
             <Title label="Latest Posts." />
           </div>
           {!posts ? (

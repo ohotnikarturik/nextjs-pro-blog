@@ -29,7 +29,7 @@ const SocialItems = ({ footerStyle }: SocialItemsProps) => {
             footerStyle
               ? 'text-primary-white hover:text-primary-red'
               : 'text-primary-red hover:text-primary-crimson'
-          } mx-2 md:mx-0 md:mr-4 transition ease-in duration-200 cursor-pointer`}
+          } mx-4 s:mx-2 md:mx-0 md:mr-4 transition ease-in duration-200 cursor-pointer`}
           key={item.id}
         >
           <a href={item.href} rel="noreferrer" target="_blank">

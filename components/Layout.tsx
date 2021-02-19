@@ -23,11 +23,13 @@ const Layout: React.FunctionComponent = ({ children }) => {
 
   return (
     <div className="flex h-screen flex-col justify-between">
-      <Header />
-      <main>{children}</main>
+      <div>
+        <Header />
+        <main>{children}</main>
+      </div>
       <Footer />
       {isShowButton && (
-        <div className="fixed z-50 right-2 md:right-8 bottom-10 md:bottom-10">
+        <div className="fixed hidden md:block z-50 md:right-8 bottom-10 md:bottom-10">
           <ButtonScrollUp />
         </div>
       )}

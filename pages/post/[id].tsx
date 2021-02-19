@@ -10,7 +10,7 @@ import NotFoundPost404 from '../../components/NotFoudPost404'
 import ButtonBack from '../../components/ButtonBack'
 import { PostProps, IObjectPost, Params } from '../../interfaces/'
 
-// contentful
+// contentful connection
 const client = require('contentful').createClient({
   space: process.env.NEXT_CONTENTFUL_SPACE_ID,
   accessToken: process.env.NEXT_CONTENTFULL_ACCESS_TOKEN,
@@ -57,35 +57,37 @@ const post = ({ post }: PostProps) => {
       />
 
       <section className="container min-h-screen flex flex-col pb-40">
-        <div className="mb-7 mt-14">
-          <Title label="Post." />
-        </div>
-        <div className="my-7">
+        <div className="mt-7">
           <ButtonBack />
         </div>
-        <div className="relative shadow-md">
-          <Image
-            className="rounded-md overflow-hidden"
-            src={'https:' + post.fields.postImg.fields.file.url}
-            alt="Read blog image"
-            width={post.fields.postImg.fields.file.details.image.width}
-            height={post.fields.postImg.fields.file.details.image.height}
-            layout="responsive"
-            quality={100}
-            objectFit="cover"
-          />
-          <div className="absolute top-0 left-0 ">
-            <Badge
-              postStyle
-              label={post.fields.category}
-              color={post.fields.badgeColor}
-            />
-          </div>
+        <div className="mb-16 text-center md:hidden">
+          <Title label="Post." />
         </div>
         <div className="flex justify-center">
           <div className="flex flex-col w-full sm:w-3/4 md:w-4/5 lg:w-2/3 xl:w-3/5">
-            <div className="mt-8 flex justify-between items-center ">
-              <span className="text-xs font-medium">{post.fields.date}</span>
+            <div className="my-4">
+              <Subtitle boldStyle label={post.fields.title} />
+            </div>
+            <div className="relative shadow-md">
+              <Image
+                className="rounded-md overflow-hidden"
+                src={'https:' + post.fields.postImg.fields.file.url}
+                alt="Read blog image"
+                width={post.fields.postImg.fields.file.details.image.width}
+                height={post.fields.postImg.fields.file.details.image.height}
+                layout="responsive"
+                quality={100}
+                objectFit="cover"
+              />
+              <div className="absolute top-0 left-0 ">
+                <Badge
+                  postStyle
+                  label={post.fields.category}
+                  color={post.fields.badgeColor}
+                />
+              </div>
+            </div>
+            <div className="my-8 flex justify-between items-center ">
               <div className="flex items-center">
                 <Image
                   className="rounded-full shadow"
@@ -100,9 +102,7 @@ const post = ({ post }: PostProps) => {
                   {post.fields.authorName}
                 </span>
               </div>
-            </div>
-            <div className="my-8">
-              <Subtitle boldStyle label={post.fields.title} />
+              <span className="text-xs font-medium">{post.fields.date}</span>
             </div>
             <div className="w-full flex flex-col items-center">
               <div className="mb-10">

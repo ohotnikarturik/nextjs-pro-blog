@@ -96,7 +96,7 @@ const FormContact = () => {
     return (
       <div className="flex flex-col items-center justify-center h-full w-full">
         {isSentImage ? (
-          <div className="flex flex-col items-center">
+          <>
             <Subtitle
               boldStyle
               label={`Thank you ${senderName}. Your message was send!`}
@@ -105,9 +105,9 @@ const FormContact = () => {
             <div className="inline-block mt-3 text-primary-blue">
               <FontAwesomeIcon width={50} icon={faCheckCircle} />
             </div>
-          </div>
+          </>
         ) : (
-          <div className="flex flex-col items-center">
+          <>
             <Subtitle
               boldStyle
               label={`Sorry ${senderName}, something went wrong, try again!`}
@@ -116,7 +116,7 @@ const FormContact = () => {
             <div className="inline-block mt-3 text-primary-purple">
               <FontAwesomeIcon width={50} icon={faTimesCircle} />
             </div>
-          </div>
+          </>
         )}
       </div>
     )
@@ -143,13 +143,13 @@ const FormContact = () => {
             onSubmit={handleSubmit}
             className="flex flex-col items-center h-full w-full"
           >
-            <div className="w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 flex justify-between items-center">
+            <div className="w-full mb-3  sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 flex justify-between items-center">
               <Subtitle
-                color="gray"
+                color="black"
                 boldStyle
                 label="Send message please . . ."
               />
-              <div className="inline-block mr-auto ml-3 text-primary-gray transform -rotate-12">
+              <div className="inline-block mr-auto ml-3 text-primary-red transform -rotate-12">
                 <FontAwesomeIcon width={20} icon={faEnvelope} />
               </div>
             </div>
@@ -248,8 +248,8 @@ const FormContact = () => {
               <button
                 className={`transform hover:scale-105 motion-reduce:transform-none focus:outline-none ${
                   !dirty &&
-                  'opacity-50 cursor-not-allowed hover:bg-primary-gray'
-                } py-2 px-4 bg-primary-gray hover:bg-primary-gray transition ease-in duration-200 text-primary-white rounded-md shadow-md font-medium`}
+                  'opacity-50 cursor-not-allowed hover:bg-primary-silver'
+                } py-2 px-4 bg-primary-silver blackr:bg-primary-silver transition ease-in duration-200 text-primary-black rounded-md shadow-md font-medium`}
                 onClick={handleReset}
                 type="reset"
               >

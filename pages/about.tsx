@@ -27,27 +27,26 @@ const about = () => {
         keywords="about"
       />
       <section className="container min-h-screen flex flex-col pb-40">
-        <div className="mb-7 mt-14">
-          <Title label="About." />
-        </div>
-        <div className="my-7">
+        <div className="mt-7 md:hidden">
           <ButtonBack />
         </div>
-        <div className="shadow-md rounded-md overflow-hidden">
-          <Image
-            className=""
-            src="/images/about-img.jpg"
-            alt="Read blog image"
-            width={900}
-            height={420}
-            layout="responsive"
-            quality={50}
-            objectFit="cover"
-          />
+        <div className="mb-16 text-center md:hidden">
+          <Title label="About." />
         </div>
-
         <div className="flex justify-center">
-          <div className="w-full sm:w-3/4 md:w-4/5 lg:w-2/3 xl:w-3/5">
+          <div className="flex flex-col w-full sm:w-3/4 md:w-4/5 lg:w-2/3 xl:w-3/5">
+            <div className="shadow-md md:mt-20 rounded-md overflow-hidden">
+              <Image
+                className=""
+                src="/images/about-img.jpg"
+                alt="Read blog image"
+                width={1000}
+                height={600}
+                layout="responsive"
+                quality={50}
+                objectFit="cover"
+              />
+            </div>
             <div className="my-8">
               <Subtitle
                 boldStyle
