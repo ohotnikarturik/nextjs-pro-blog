@@ -65,7 +65,7 @@ const post = ({ post }: PostProps) => {
         </div>
         <div className="flex justify-center">
           <div className="flex flex-col w-full sm:w-3/4 md:w-4/5 lg:w-2/3 xl:w-3/5">
-            <div className="my-4">
+            <div className="mb-4 md:mt-4">
               <Subtitle boldStyle label={post.fields.title} />
             </div>
             <div className="relative shadow-md">

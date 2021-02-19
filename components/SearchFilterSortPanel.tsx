@@ -55,7 +55,7 @@ const SearchFilterSortPanel = ({
       <div className="w-full md:flex-1 flex items-center justify-end">
         <ReverseListItem onClickReversPosts={onClickReversPosts} />
       </div>
-      <div className="left-8 top-28 md:top-16 mt-3 absolute">
+      <div className=" top-28 md:top-16 mt-3 absolute">
         {isMenuOpen && (
           <DropDownMenu
             // divRef={divRef}

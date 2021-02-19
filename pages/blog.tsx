@@ -77,7 +77,7 @@ const blog = ({ listPosts }: BlogProps) => {
           <Title label="Blog." />
         </div>
         <div className="z-20 md:mt-16 mb-14 bg-primary-white opacity-95">
-          <div className="container relative">
+          <div className="relative">
             <SearchFilterSortPanel
               getSearchInputValue={getSearchInputValue}
               onClickReversPosts={onClickReversPosts}
@@ -85,7 +85,7 @@ const blog = ({ listPosts }: BlogProps) => {
             />
           </div>
         </div>
-        <div className="container w-full">
+        <div className="w-full">
           {!posts ? (
             <div className="w-full flex justify-center">
               <Loader label="Loading..." />
