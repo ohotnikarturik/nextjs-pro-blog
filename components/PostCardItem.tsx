@@ -22,10 +22,7 @@ const PostCardItem = ({ post }: PostCardItemProps) => {
               alt="Post image"
             />
             <div className="absolute left-0 bottom-0">
-              <Badge
-                color={post.fields.badgeColor}
-                label={post.fields.category}
-              />
+              <Badge label={post.fields.category} />
             </div>
           </div>
           <div className="h-1/2 px-4 pt-4 pb-7">

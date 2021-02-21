@@ -80,11 +80,7 @@ const post = ({ post }: PostProps) => {
                 objectFit="cover"
               />
               <div className="absolute top-0 left-0 ">
-                <Badge
-                  postStyle
-                  label={post.fields.category}
-                  color={post.fields.badgeColor}
-                />
+                <Badge postStyle label={post.fields.category} />
               </div>
             </div>
             <div className="my-8 flex justify-between items-center ">
@@ -107,7 +103,7 @@ const post = ({ post }: PostProps) => {
             <div className="w-full flex flex-col items-center">
               <div className="mb-10">
                 <div>
-                  {documentToReactComponents(post.fields.textContent, {
+                  {documentToReactComponents(post.fields.content, {
                     renderNode: {
                       [BLOCKS.EMBEDDED_ASSET]: (node) => (
                         <Image

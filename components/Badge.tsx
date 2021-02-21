@@ -1,6 +1,6 @@
 import { BadgeProps } from '../interfaces/index'
 
-const Badge = ({ label, color, postStyle }: BadgeProps) => {
+const Badge = ({ label, postStyle }: BadgeProps) => {
   return (
     <div
       className={`${

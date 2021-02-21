@@ -31,7 +31,6 @@ export interface SubtitleProps {
 }
 export interface BadgeProps {
   label: string
-  color: string
   postStyle?: boolean
 }
 export interface BlogProps {
@@ -64,12 +63,11 @@ export interface IPost {
   id: string
   title: string
   postImg: IPostImg
-  textContent: Document
+  content: Document
   excerpt: string
   authorImg: IAuthorImg
   authorName: string
   date: string
-  badgeColor: string
   category: string
 }
 
