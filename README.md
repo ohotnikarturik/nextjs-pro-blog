@@ -12,7 +12,7 @@
 </p>
 <img src="https://img.shields.io/badge/made--by-Artur Okhotnichenko-crimson?style=flat">
 
-#### Live Demo on Vercel : https://nextjs-pro-blog.vercel.app/
+#### Live Demo on Vercel : https://pro-blog.vercel.app/
 
 **_ProBlog is Progressive Web Application, where you can find and read posts on the most popular topics. Home page has Latest Post section. On Blog page you can chosoe/sort Categories, search form where you can find post by name of title and reverse list of posts Pagination to switch between post's list. About page, you can read about ProBlog app. Contact form, by which you can send message to vevelopment team. ProBlog has Managing data from Contentful CMS. ProBlog app fully responsive and awesome feature that app can work ofline and installed to desktop._**
 

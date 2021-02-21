@@ -67,7 +67,7 @@ export default function Home({ posts }: HomeProps) {
         </div>
       </section>
       <section id="/latest-posts" className="min-h-screen relative">
-        <div className="container pt-0 md:pt-20 pb-40 ">
+        <div className="container pt-20 pb-40 ">
           <div className="mb-7 text-center sm:text-left">
             <Title label="Latest Posts." />
           </div>

@@ -8,6 +8,7 @@ const navBarItems = [
   { label: 'Blog', path: '/blog' },
   { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
+  { label: 'Tech', path: '/tech' },
 ]
 
 const NavBar = ({ footerStyle, overlayStyle }: NavBarProps) => {

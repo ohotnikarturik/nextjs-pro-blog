@@ -17,7 +17,7 @@ const NotFoundPost404 = () => {
         <h2 className="text-9xl text-primary-red font-bold border-primary-red border-b">
           404
         </h2>
-        <span className="font-medium text-primary-black mt-6">
+        <span className="font-medium text-center text-primary-black mt-6">
           Post could not be found. Go{' '}
           <button
             className="focus:outline-none hover:text-primary-crimson hover:border-primary-crimson transition ease-in duration-200"
