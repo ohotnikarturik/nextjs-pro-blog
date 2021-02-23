@@ -10,7 +10,7 @@ const PostCardItem = ({ post }: PostCardItemProps) => {
   return (
     <Link href="/post/[id]" as={`/post/${post.sys.id}`}>
       <a>
-        <div className=" bg-primary-white overflow-hidden rounded-md">
+        <div className="bg-primary-white overflow-hidden rounded-md">
           <div className="h-1/2 relative shadow-sm">
             <Image
               src={'https:' + post.fields.postImg.fields.file.url}
@@ -25,19 +25,17 @@ const PostCardItem = ({ post }: PostCardItemProps) => {
               <Badge label={post.fields.category} />
             </div>
           </div>
-          <div className="h-1/2 px-4 pt-4 pb-7">
-            <div className="h-full">
-              <div className="overflow-scroll h-7">
-                <Subtitle boldStyle label={post.fields.title} />
-              </div>
-              <div className="h-20 mt-3 max-h-20 overflow-scroll">
+          <div className="h-52 px-4 pt-4 pb-7 flex flex-col justify-between">
+            <div className="h-full overflow-hidden">
+              <Subtitle boldStyle label={post.fields.title} />
+              <div className="mt-3">
                 <span>{post.fields.excerpt}</span>
               </div>
             </div>
             <div className="flex items-center justify-between pt-4">
               <div className="flex items-center mb-2 s:mb-0">
                 <Image
-                  className=" rounded-full"
+                  className="rounded-full"
                   objectFit={'cover'}
                   src={'https:' + post.fields.authorImg.fields.file.url}
                   alt="Profile"
