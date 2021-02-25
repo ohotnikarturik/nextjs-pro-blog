@@ -40,6 +40,7 @@ export interface BlogProps {
       fields: IPost
     }
   ]
+  listCategoties: [string]
 }
 export interface HomeProps {
   posts: [
@@ -101,6 +102,7 @@ export interface DropDownMenuProps {
   onClickSetCategory: (value: string) => void
   divRef?: any // fix
   category: string
+  listCategoties: [string]
 }
 export interface HamburgerMenuProps {
   onClick: () => void
@@ -122,6 +124,7 @@ export interface SearchFilterSortPanelProps {
   getSearchInputValue: (value: string) => void
   onClickReversPosts: () => void
   onSelectCategory: (category: string) => void
+  listCategoties: [string]
 }
 export interface SearchFormProps {
   getSearchInputValue: (value: string) => void

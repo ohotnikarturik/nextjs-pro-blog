@@ -15,19 +15,27 @@ const client = require('contentful').createClient({
   accessToken: process.env.NEXT_CONTENTFULL_ACCESS_TOKEN,
 })
 
+// get list of posts and categories from contentful
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await client.getEntries({
+  const dataCategories = await client.getEntries({
+    content_type: 'category',
+  })
+
+  const dataPosts = await client.getEntries({
     content_type: 'post',
   })
 
   return {
     props: {
-      listPosts: data.items,
+      listPosts: dataPosts.items,
+      listCategoties: dataCategories.items[0].fields.categories,
     },
   }
 }
 
-const blog = ({ listPosts }: BlogProps) => {
+const blog = ({ listPosts, listCategoties }: BlogProps) => {
+  console.log('listCategoties', listCategoties)
+
   const [searchFormValue, setSearchFormValue] = useState('')
   const [posts, setPosts] = useState<Array<IObjectPost>>([])
 
@@ -82,6 +90,7 @@ const blog = ({ listPosts }: BlogProps) => {
               getSearchInputValue={getSearchInputValue}
               onClickReversPosts={onClickReversPosts}
               onSelectCategory={onSelectCategory}
+              listCategoties={listCategoties}
             />
           </div>
         </div>

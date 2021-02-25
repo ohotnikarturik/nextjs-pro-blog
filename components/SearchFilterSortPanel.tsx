@@ -10,8 +10,9 @@ const SearchFilterSortPanel = ({
   getSearchInputValue,
   onClickReversPosts,
   onSelectCategory,
+  listCategoties,
 }: SearchFilterSortPanelProps) => {
-  // const divRef = React.useRef<HTMLElement | null>(null)
+  const divRef = React.useRef<HTMLElement | null>(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [category, setCategory] = useState('All Categories')
 
@@ -21,24 +22,22 @@ const SearchFilterSortPanel = ({
     onSelectCategory(value)
     setIsMenuOpen(false)
   }
+  // close DropDownMenu if mouse clicks outside of DropDownMenu
+  const onMouseDown = (event: MouseEvent) => {
+    if (divRef.current && !divRef.current?.contains(event.target as Node)) {
+      console.log('category', category)
+      setIsMenuOpen(false)
+    }
+  }
 
-  // const onMouseDown = (event: MouseEvent) => {
-  //   if (divRef.current?.contains(event.target as Node)) {
-  //     console.log('category', category)
-
-  //     // onSelectCategory(category)
-  //   }
-  //   setIsMenuOpen(false)
-  // }
-
-  // useEffect(() => {
-  //   // add when mounted
-  //   document.addEventListener('mousedown', onMouseDown)
-  //   // return function to be called when unmounted
-  //   return () => {
-  //     document.removeEventListener('mousedown', onMouseDown)
-  //   }
-  // }, [])
+  useEffect(() => {
+    // add when mounted
+    document.addEventListener('mousedown', onMouseDown)
+    // return function to be called when unmounted
+    return () => {
+      document.removeEventListener('mousedown', onMouseDown)
+    }
+  }, [])
 
   return (
     <div className="flex flex-col justify-around md:justify-start md:flex-row h-40 md:h-24">
@@ -58,9 +57,10 @@ const SearchFilterSortPanel = ({
       <div className=" top-28 md:top-16 mt-3 absolute">
         {isMenuOpen && (
           <DropDownMenu
-            // divRef={divRef}
+            divRef={divRef}
             onClickSetCategory={onClickSetCategory}
             category={category}
+            listCategoties={listCategoties}
           />
         )}
       </div>
