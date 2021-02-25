@@ -153,3 +153,25 @@ export interface IFormValues {
 }
 
 
+export interface AboutProps {
+  data: {
+    subtitle: string
+    aboutImg: IAboutImg
+    content: Document
+  }
+}
+
+export interface IAboutImg {
+  fields: {
+    file: {
+      url: string
+      details: {
+        image: {
+          width: number
+          height: number
+        }
+      }
+    }
+  }
+}
+

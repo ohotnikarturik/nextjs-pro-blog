@@ -51,9 +51,9 @@ const TechStackList = () => {
     <>
       <div className="mb-8 text-center md:text-left">
         <Subtitle
-          color="black"
+          color="gray"
           boldStyle
-          label="Technologies, by which ProBlog app was built"
+          label="Technologies, by which the ProBlog app was built"
         />
       </div>
       <ul className="flex h-full flex-col">

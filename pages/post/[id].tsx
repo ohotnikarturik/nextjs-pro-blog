@@ -39,7 +39,6 @@ export const getStaticProps = async ({ params }: Params) => {
     props: {
       post: data.items[0],
     },
-    revalidate: 1,
   }
 }
 
@@ -76,7 +75,7 @@ const post = ({ post }: PostProps) => {
                 width={post.fields.postImg.fields.file.details.image.width}
                 height={post.fields.postImg.fields.file.details.image.height}
                 layout="responsive"
-                quality={100}
+                quality={70}
                 objectFit="cover"
               />
               <div className="absolute top-0 left-0 ">

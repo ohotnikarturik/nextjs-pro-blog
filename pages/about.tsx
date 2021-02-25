@@ -1,24 +1,33 @@
 import Image from 'next/image'
-import ButtonBack from '../components/ButtonBack'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { BLOCKS } from '@contentful/rich-text-types'
 
+import ButtonBack from '../components/ButtonBack'
 import Meta from '../components/Meta'
 import Subtitle from '../components/Subtitle'
 import Title from '../components/Title'
+import { AboutProps } from '../interfaces'
 
-const contentList = [
-  {
-    id: 1,
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-  {
-    id: 2,
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  },
-]
+// contentful connection
+const client = require('contentful').createClient({
+  space: process.env.NEXT_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_CONTENTFULL_ACCESS_TOKEN,
+})
 
-const about = () => {
+// get about page content from contentful
+export const getStaticProps = async () => {
+  const data = await client.getEntries({
+    content_type: 'aboutPage',
+  })
+
+  return {
+    props: {
+      data: data.items[0].fields,
+    },
+  }
+}
+
+const about = ({ data }: AboutProps) => {
   return (
     <>
       <Meta
@@ -37,29 +46,36 @@ const about = () => {
           <div className="flex flex-col w-full sm:w-3/4 md:w-4/5 lg:w-2/3 xl:w-3/5">
             <div className="shadow-md md:mt-20 rounded-md overflow-hidden">
               <Image
-                className=""
-                src="/images/about-img.jpg"
-                alt="Read blog image"
-                width={1000}
-                height={600}
+                src={'https:' + data.aboutImg.fields.file.url}
+                alt="About blog image"
+                width={data.aboutImg.fields.file.details.image.width}
+                height={data.aboutImg.fields.file.details.image.height}
                 layout="responsive"
-                quality={50}
+                quality={70}
                 objectFit="cover"
               />
             </div>
             <div className="my-8">
-              <Subtitle
-                boldStyle
-                label="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-              />
+              <Subtitle boldStyle label={data.subtitle} />
             </div>
-            <ul>
-              {contentList.map((item) => (
-                <li key={item.id} className="mb-10">
-                  <p>{item.text}</p>
-                </li>
-              ))}
-            </ul>
+            <div className="mb-10">
+              {documentToReactComponents(data.content, {
+                renderNode: {
+                  [BLOCKS.EMBEDDED_ASSET]: (node) => (
+                    <Image
+                      className="rounded-md overflow-hidden"
+                      src={'https:' + node.data.target.fields.file.url}
+                      alt="Read blog image"
+                      width={node.data.target.fields.file.details.image.width}
+                      height={node.data.target.fields.file.details.image.height}
+                      layout="responsive"
+                      quality={100}
+                      objectFit="cover"
+                    />
+                  ),
+                },
+              })}
+            </div>
           </div>
         </div>
       </section>

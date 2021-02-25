@@ -144,12 +144,8 @@ const FormContact = () => {
             className="flex flex-col items-center h-full w-full"
           >
             <div className="w-full mb-3  sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 flex justify-between items-center">
-              <Subtitle
-                color="black"
-                boldStyle
-                label="Send message please . . ."
-              />
-              <div className="inline-block mr-auto ml-3 text-primary-red transform -rotate-12">
+              <Subtitle color="gray" boldStyle label="Send a message, please" />
+              <div className="inline-block mr-auto ml-3 text-primary-gray transform -rotate-12">
                 <FontAwesomeIcon width={20} icon={faEnvelope} />
               </div>
             </div>
