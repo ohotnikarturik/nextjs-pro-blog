@@ -67,3 +67,8 @@ textarea {
 .min-height-5 {
   min-height: 5rem;
 }
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
